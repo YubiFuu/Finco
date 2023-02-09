@@ -1,0 +1,35 @@
+{
+    "name": "server",
+    "version": "1.0.0",
+    "description": "Finco - our final full stack web dev bootcamp project.",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node index.js",
+        "start-dev": "nodemon index.js"
+    },
+    "keywords": [
+        "Finco",
+        "finances",
+        "finance app",
+        "transactions"
+    ],
+    "author": "Jess, Sersch, George",
+    "license": "ISC",
+    "dependencies": {
+        "cookie-session": "^2.0.0",
+        "cors": "^2.8.5",
+        "dotenv": "^16.0.3",
+        "express": "^4.18.2",
+        "googleapis": "^110.0.0",
+        "joi": "^17.7.0",
+        "jsonwebtoken": "^9.0.0",
+        "mongoose": "^6.9.1",
+        "morgan": "^1.10.0",
+        "multer": "^1.4.5-lts.1",
+        "nodemailer": "^6.9.1"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.20"
+    }
+}
