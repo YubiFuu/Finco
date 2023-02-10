@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { apiBaseUrl } from "../../../api";
 import Button from "../../../components/Button/Button";
 import "./LogIn.css";
 
@@ -13,7 +14,7 @@ const LogIn = ({ setToken }) => {
 	function login(event) {
 		event.preventDefault();
 
-		fetch("http://localhost:9001/api/v1/users/login", {
+		fetch(`${apiBaseUrl}/users/login`, {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { apiBaseUrl } from "../../../api";
 import Button from "../../../components/Button/Button";
 import "./SignUp.css";
 
@@ -18,7 +19,7 @@ const SignUp = () => {
 	function register(event) {
 		event.preventDefault(); // page reload verhindern!
 
-		fetch("http://localhost:9001/api/v1/users/register", {
+		fetch(`${apiBaseUrl}/users/register`, {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",

@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { apiBaseUrl } from "./api";
 import "./App.css";
+import Protected from "./components/Protected/Protected";
 import EditProfile from "./pages/Account/EditProfile/EditProfile";
+import ProfilePage from "./pages/Account/EditProfile/ProfilePage";
 import LogIn from "./pages/Account/LogIn/LogIn";
 import SignUp from "./pages/Account/SignUp/SignUp";
 
@@ -27,7 +30,7 @@ function App() {
 		const refreshTokenTimeoutID = setTimeout(() => {
 			console.log("about to do silet refresh");
 
-			fetch("http://localhost:9001/api/v1/users/refresh-token", {
+			fetch(`${apiBaseUrl}/users/refresh-token`, {
 				method: "POST",
 				credentials: "include", // here: take refresh token from httpOnly secure cookie and send it
 			})
@@ -46,6 +49,9 @@ function App() {
 				<SignUp />
 				<EditProfile />
 				<LogIn setToken={setToken} />
+				<Protected token={token} setToken={setToken}>
+					<ProfilePage token={token} />
+				</Protected>
 			</BrowserRouter>
 		</div>
 	);
