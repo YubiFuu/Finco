@@ -1,7 +1,11 @@
 import "./Button.css";
 
-const Button = () => {
-	return <button></button>;
+const Button = (props) => {
+	return (
+		<button onClick={props.function} className="blue-button">
+			{props.buttonName}
+		</button>
+	);
 };
 
 export default Button;

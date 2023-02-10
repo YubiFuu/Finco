@@ -1,0 +1,19 @@
+.blue-button {
+	padding: 10px 80px;
+	border-radius: 20px;
+	border: none;
+	background: linear-gradient(
+		to bottom,
+		rgb(66, 166, 252),
+		rgb(32, 123, 254)
+	);
+	color: white;
+}
+
+.blue-button:hover {
+	cursor: pointer;
+}
+.App {
+	max-width: 500px;
+	margin: 0 auto;
+}
