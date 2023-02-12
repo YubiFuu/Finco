@@ -79,6 +79,7 @@ const EditProfile = ({ token, profileInfo, onDone, onCancel }) => {
 			/>
 			<div>📸</div>
 			<input
+				className="input-form"
 				type="text"
 				placeholder="Card number"
 				onChange={(e) => setCardNumber(e.target.value)}

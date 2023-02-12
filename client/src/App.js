@@ -3,6 +3,7 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { apiBaseUrl } from "./api";
 import "./App.css";
 import Protected from "./components/Protected/Protected";
+import TransactionsForm from "./components/TransactionsForm/TransactionsForm";
 import EditProfile from "./pages/Account/EditProfile/EditProfile";
 import ProfilePage from "./pages/Account/EditProfile/ProfilePage";
 import LogIn from "./pages/Account/LogIn/LogIn";
@@ -46,6 +47,7 @@ function App() {
 	return (
 		<div className="App">
 			<BrowserRouter>
+				<TransactionsForm />
 				<SignUp />
 				<EditProfile />
 				<LogIn setToken={setToken} />

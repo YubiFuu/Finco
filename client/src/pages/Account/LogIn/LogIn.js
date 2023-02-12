@@ -42,12 +42,14 @@ const LogIn = ({ setToken }) => {
 
 			<form className="input-wrapper">
 				<input
+					className="input-form"
 					type="email"
 					placeholder="Email"
 					value={email}
 					onChange={(e) => setEmail(e.target.value)}
 				/>
 				<input
+					className="input-form"
 					type="password"
 					placeholder="Password"
 					value={password}

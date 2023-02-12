@@ -8,7 +8,7 @@ const ProfilePage = ({ token }) => {
 	const [errorMessage, setErrorMessage] = useState([]);
 
 	useEffect(() => {
-		fetch(`${apiBaseUrl}/stays/?onlyMyStays=yes`, {
+		fetch(`${apiBaseUrl}/profile`, {
 			method: "GET",
 			headers: {
 				"Content-Type": "application/json",

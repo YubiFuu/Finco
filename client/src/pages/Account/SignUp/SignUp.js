@@ -56,24 +56,28 @@ const SignUp = () => {
 
 			<form className="input-wrapper">
 				<input
+					className="input-form"
 					type="text"
 					placeholder="Name"
 					value={firstName}
 					onChange={(e) => setFirstName(e.target.value)}
 				/>
 				<input
+					className="input-form"
 					type="text"
 					placeholder="Last Name"
 					value={lastName}
 					onChange={(e) => setLastName(e.target.value)}
 				/>
 				<input
+					className="input-form"
 					type="email"
 					placeholder="Email"
 					value={email}
 					onChange={(e) => setEmail(e.target.value)}
 				/>
 				<input
+					className="input-form"
 					type="password"
 					placeholder="Password"
 					value={password}
