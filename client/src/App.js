@@ -8,6 +8,7 @@ import EditProfile from "./pages/Account/EditProfile/EditProfile";
 import ProfilePage from "./pages/Account/EditProfile/ProfilePage";
 import LogIn from "./pages/Account/LogIn/LogIn";
 import SignUp from "./pages/Account/SignUp/SignUp";
+import AllTransactions from "./pages/AllTransactions/AllTransactions";
 
 function App() {
 	const [token, setToken] = useState(null);
@@ -47,7 +48,8 @@ function App() {
 	return (
 		<div className="App">
 			<BrowserRouter>
-				<TransactionsForm />
+				<AllTransactions token={token} />
+
 				<SignUp />
 				<EditProfile />
 				<LogIn setToken={setToken} />

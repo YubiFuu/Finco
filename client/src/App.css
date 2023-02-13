@@ -1,3 +1,9 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
 .blue-button {
 	padding: 10px 80px;
 	border-radius: 20px;
@@ -14,7 +20,7 @@
 	cursor: pointer;
 }
 .App {
-	max-width: 576px;
+	max-width: 480px;
 	margin: 0 auto;
 }
 
@@ -29,4 +35,23 @@
 	width: 90%;
 	border-radius: 20px;
 	border: 1px solid gray;
+}
+
+.display-flex__centered {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.display-flex__evenly {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+.display-flex__between {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.logo {
+	height: 40px;
 }

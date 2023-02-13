@@ -1,0 +1,4 @@
+.transaction-item .middle-part {
+	flex-grow: 1;
+	flex-direction: column;
+}

@@ -51,7 +51,7 @@ const ProfileInfo = ({ token }) => {
 					<p>{profileInfo.bio}</p>
 					<img
 						className="user-profile-avatar"
-						src={`${profileInfo.profilePicture}`}
+						src={`${apiBaseUrl}/img/${profileInfo.profilePicture}`}
 						alt={`${profileInfo.firstName} bild`}
 					/>
 					<p>{profileInfo.email}</p>

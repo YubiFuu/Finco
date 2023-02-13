@@ -15,7 +15,7 @@ const TransactionsForm = () => {
 					type="text"
 					placeholder="🔍"
 				/>
-				<input type="datetime-local" />
+				<input type="date" />
 			</div>
 		</div>
 	);

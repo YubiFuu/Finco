@@ -5,7 +5,7 @@ import Button from "../../../components/Button/Button";
 import "./LogIn.css";
 
 const LogIn = ({ setToken }) => {
-	const [email, setEmail] = useState("sersch@gmail.com");
+	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("12345678");
 	const [errorMessage, setErrorMessage] = useState("");
 
