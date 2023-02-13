@@ -102,7 +102,6 @@ const getShowProfile = catchErrors(async (req, res) => {
 
 const putEditProfile = catchErrors(async (req, res) => {
     const userId = req.verifiedUserClaims.sub;
-
     console.log(req.body, req.file);
     const updateInfo = {
         userId,

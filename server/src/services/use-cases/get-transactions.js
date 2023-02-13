@@ -5,7 +5,10 @@ async function getTransactions({ userId }) {
     if (!user) {
         throw new Error("User not Found");
     }
-    return { transaction: user.transaction };
+    return {
+        transaction: user.transaction,
+        monthlyTransaction: user.monthlyTransaction,
+    };
 }
 
 module.exports = { getTransactions };

@@ -10,7 +10,15 @@ const userSchema = new mongoose.Schema(
         email: { type: String, required: true },
         profilePicture: { type: String, default: avatarPlaceHolder },
         cardNumber: { type: String, default: "000" },
-        monthlyLimit: { type: Number, required: false },
+        monthlyLimit: { type: Number, default: 6000 },
+        monthlyTransaction: [
+            {
+                month: { type: String },
+                monthlyIncome: { type: Number, default: 0 },
+                monthlyExpense: { type: Number, default: 0 },
+            },
+        ],
+        totalAmount: { type: Number, default: 100 },
         passwordHash: { type: String, required: true },
         passwordSalt: { type: String, required: true },
         transaction: [

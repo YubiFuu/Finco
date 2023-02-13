@@ -1,6 +1,11 @@
 const { User } = require("../../models");
 
-async function editProfile({ profilePicture, cardNumber, monthlyLimit }) {
+async function editProfile({
+    userId,
+    profilePicture,
+    cardNumber,
+    monthlyLimit,
+}) {
     const user = await User.findByIdAndUpdate(
         userId,
         {

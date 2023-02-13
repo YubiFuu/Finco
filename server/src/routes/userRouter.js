@@ -49,7 +49,7 @@ userRouter.get(
 userRouter.put(
     "/profile",
     makeAuthMiddleware({ tokenType: "access" }),
-    multer({ dest: "imageUploads" }).single("profilePicture"), // multipart/form-data!
+    multer({ dest: "imageUploads" }).single("profilePicture"),
     userController.putEditProfile
 );
 
