@@ -6,10 +6,12 @@ BaseUrl Users: "/api/v1/users"
 GET Routes:
 
 -   "/all-transactions"
-    res: monthlyTransaction, transaction
+    res: transaction
 -   "/profile"
-    res: firstName, lastName, email, profilePicture, cardNumber, monthlyLimit, totalAmount
+    res: firstName, lastName, email, profilePicture, cardNumber, monthlyLimit, totalAmount, monthlyTransaction
+
     POST:
+
 -   "/login"
     req: email, password
 -   "/register"
