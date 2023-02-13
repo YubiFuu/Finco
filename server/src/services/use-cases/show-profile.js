@@ -12,7 +12,8 @@ async function showProfile({ userId }) {
         profilePicture: user.profilePicture,
         cardNumber: user.cardNumber,
         monthlyLimit: user.monthlyLimit,
-        transaction: user.transaction,
+        totalAmount: user.totalAmount,
+        monthlyTransaction: user.monthlyTransaction,
     };
 }
 
