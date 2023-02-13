@@ -1,0 +1,9 @@
+.login-page {
+	display: flex;
+	flex-direction: column;
+}
+
+.login-page .input-wrapper {
+	display: flex;
+	flex-direction: column;
+}

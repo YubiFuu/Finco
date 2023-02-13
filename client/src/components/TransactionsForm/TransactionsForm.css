@@ -1,0 +1,8 @@
+.transactions-form .wrapper-avatar__row {
+	display: flex;
+	justify-content: space-between;
+}
+
+.transactions-form .wrapper-search__row {
+	display: flex;
+}
