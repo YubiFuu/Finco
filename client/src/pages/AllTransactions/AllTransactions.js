@@ -12,6 +12,9 @@ const AllTransactions = ({ token }) => {
 	const [incomeTotal, setIncomeTotal] = useState([]);
 	const [expenseTotal, setExpenseTotal] = useState([]);
 	const [isLoading, setIsLoading] = useState(true);
+	const [searchInput, setSearchInput] = useState("");
+	const [filtered, setFiltered] = useState([]);
+
 	console.log("AllTransactions:", token);
 
 	useEffect(() => {
@@ -26,6 +29,7 @@ const AllTransactions = ({ token }) => {
 			.then((response) => {
 				setMonthlyTransactions(response.result.monthlyTransactions);
 				setUserTransactions(response.result.transaction);
+				setFiltered(response.result.transaction);
 				setIsLoading(false);
 				console.log("Response:", response);
 			});
@@ -51,6 +55,22 @@ const AllTransactions = ({ token }) => {
 	});
 	*/
 
+	function filterByName() {
+		const userInput = document.getElementById("search-input");
+		console.log("search input:", userInput.value);
+		let filteredExpenses = [];
+
+		userTransactions.map((exp) => {
+			if (exp.category.includes(userInput.value.toString())) {
+				filteredExpenses.push(exp);
+			}
+		});
+		console.log("FILTERED:", filteredExpenses);
+		return filteredExpenses.length !== 0
+			? setFiltered(filteredExpenses)
+			: setFiltered(userTransactions);
+	}
+
 	return (
 		<div className="all-transactions">
 			<div className="display-flex__between">
@@ -63,7 +83,12 @@ const AllTransactions = ({ token }) => {
 			</div>
 			<div className="search-row">
 				<h2>All Transactions</h2>
-				<input type="text" placeholder="🔍" />
+				<input
+					id="search-input"
+					onChange={filterByName}
+					type="text"
+					placeholder="🔍"
+				/>
 				<input type="date" />
 			</div>
 			<div className="total-inc-exp-wrapper display-flex__evenly">
@@ -92,7 +117,7 @@ const AllTransactions = ({ token }) => {
 			</div>
 			<h3>Recent Transactions</h3>
 			<div>
-				{userTransactions.map((e, index) => {
+				{filtered.map((e, index) => {
 					return (
 						<TransactionItem
 							key={index}

@@ -4,7 +4,6 @@ const TransactionItem = (props) => {
 	const expensesIconsPath = "./images/catagoryIcons/Expenses";
 	const incomeIconsPath = "./images/catagoryIcons/income";
 	function pickIcon() {
-		console.log("inside pickIcon");
 		if (props.category === "food&drink") {
 			return (
 				<img
