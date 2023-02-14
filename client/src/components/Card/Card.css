@@ -1,0 +1,22 @@
+@font-face {
+    font-family: "CeraPro";
+    src: url("../../../public/fonts/CeraPro.otf");
+}
+.card {
+    width: 500px;
+    height: 350px;
+    background-image: url("../../../public/images/creditCard.svg");
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: calc(50% - 25px);
+    background-size: 1500px;
+    font-family: "CeraPro";
+    color: white;
+}
+.card div {
+    padding: 165px 40px;
+}
+.card div p:first-of-type {
+    margin-bottom: 10px;
+    opacity: 0.5;
+}

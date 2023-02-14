@@ -9,7 +9,7 @@ const userSchema = new mongoose.Schema(
         lastName: { type: String, required: true },
         email: { type: String, required: true },
         profilePicture: { type: String, default: avatarPlaceHolder },
-        cardNumber: { type: String, default: "000" },
+        cardNumber: { type: String, default: "00000000" },
         monthlyLimit: { type: Number, default: 6000 },
         monthlyTransaction: [
             {
