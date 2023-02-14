@@ -18,7 +18,11 @@ const userSchema = new mongoose.Schema(
                 monthlyExpense: { type: Number, default: 0 },
             },
         ],
-        totalAmount: { type: Number, default: 100 },
+        totalAmount: {
+            amount: { type: Number, default: 0 },
+            totalIncome: { type: Number, default: 0 },
+            totalExpense: { type: Number, default: 0 },
+        },
         passwordHash: { type: String, required: true },
         passwordSalt: { type: String, required: true },
         transaction: [
@@ -27,7 +31,6 @@ const userSchema = new mongoose.Schema(
                 typeTransaction: { type: String, required: true },
                 category: { type: String, required: true },
                 dateAt: { type: String, required: true },
-                timeAt: { type: String, required: true },
             },
         ],
     },

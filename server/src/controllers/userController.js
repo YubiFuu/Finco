@@ -71,7 +71,6 @@ const postNewTransaction = catchErrors(async (req, res) => {
         typeTransaction: req.body.typeTransaction,
         category: req.body.category,
         dateAt: req.body.dateAt,
-        timeAt: req.body.timeAt,
         userId,
     };
 
