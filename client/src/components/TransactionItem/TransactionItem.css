@@ -1,4 +1,6 @@
 .transaction-item .middle-part {
 	flex-grow: 1;
 	flex-direction: column;
+	align-items: flex-start;
+	padding-left: 40px;
 }

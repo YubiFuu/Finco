@@ -3,7 +3,7 @@ import "./TransactionItem.css";
 const TransactionItem = (props) => {
 	return (
 		<div className="transaction-item display-flex__centered">
-			<img className="logo" src="./Finco2.svg" alt="IMG" />
+			<img className="logo" src="./images/Finco2.svg" alt="IMG" />
 			<div className="middle-part display-flex__between">
 				<h3>{props.category}</h3>
 				<p>
