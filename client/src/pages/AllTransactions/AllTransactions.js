@@ -6,16 +6,20 @@ import TransactionItem from "../../components/TransactionItem/TransactionItem";
 import "./AllTransactions.css";
 
 const AllTransactions = ({ token }) => {
-	const [userTransactions, setUserTransactions] = useState([]);
+	const [profile, setProfile] = useState([]);
 	const [errorMessage, setErrorMessage] = useState("");
+	const [errorMessage2, setErrorMessage2] = useState([]);
+
+	const [userTransactions, setUserTransactions] = useState([]);
 	const [monthlyTransactions, setMonthlyTransactions] = useState([]);
-	const [incomeTotal, setIncomeTotal] = useState([]);
-	const [expenseTotal, setExpenseTotal] = useState([]);
 	const [isLoading, setIsLoading] = useState(true);
-	const [searchInput, setSearchInput] = useState("");
 	const [filtered, setFiltered] = useState([]);
+	const [toggleFilterIncome, setToggleFilterIncome] = useState(false);
+	const [toggleFilterExpense, setToggleFilterExpense] = useState(false);
 
 	console.log("AllTransactions:", token);
+
+	//==================== Fetch Transactions =======================
 
 	useEffect(() => {
 		fetch(`${apiBaseUrl}/users/all-transactions`, {
@@ -35,26 +39,31 @@ const AllTransactions = ({ token }) => {
 			});
 	}, [token]);
 
-	/*
-	if (isLoading) {
-		return (
-			<div>
-				<h2>Loading...</h2>
-			</div>
-		);
-	}
-	userTransactions.map((e) => {
-		if (e.typeTransaction === "income") {
-			setIncomeTotal((prevIncome) => prevIncome + e.amount);
-			console.log("incomeTotal:", incomeTotal);
-		}
-		if (e.typeTransaction === "expense") {
-			setExpenseTotal((prevExpense) => prevExpense + e.amount);
-			console.log("expenseTotal:", expenseTotal);
-		}
-	});
-	*/
+	//================ Fetch Profile =======================
 
+	useEffect(() => {
+		fetch(`${apiBaseUrl}/users/profile`, {
+			method: "GET",
+			headers: {
+				"Content-Type": "application/json",
+				Authorization: `Bearer ${token}`,
+			},
+		})
+			.then((res) => res.json())
+			.then(({ status, result, error }) => {
+				if (status === "ok") {
+					setProfile(result);
+				} else {
+					setErrorMessage2(error.message);
+				}
+			});
+	}, [token]);
+
+	function setDotAfter3Digits(money) {
+		return money?.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.");
+	}
+
+	// ================= Filter by Input ======================
 	function filterByName() {
 		const userInput = document.getElementById("search-input");
 		console.log("search input:", userInput.value);
@@ -66,11 +75,52 @@ const AllTransactions = ({ token }) => {
 			}
 		});
 		console.log("FILTERED:", filteredExpenses);
+
 		return filteredExpenses.length !== 0
 			? setFiltered(filteredExpenses)
 			: setFiltered(userTransactions);
 	}
+	//=========================================================
 
+	// ================= Filter by Income ======================
+	function filterByIncome() {
+		let filteredExpenses = [];
+		setToggleFilterExpense((prev) => (prev = !toggleFilterExpense));
+		setToggleFilterIncome((prev) => (prev = !prev));
+
+		userTransactions.map((exp) => {
+			if (exp.typeTransaction === "income") {
+				filteredExpenses.push(exp);
+			}
+		});
+		console.log("FILTERED:", filteredExpenses);
+		console.log("Income:", toggleFilterIncome);
+		console.log("Expense:", toggleFilterExpense);
+		return toggleFilterIncome
+			? setFiltered(filteredExpenses)
+			: setFiltered(userTransactions);
+	}
+	//=========================================================
+
+	// ================= Filter by Expenses ======================
+	function filterByExpense() {
+		let filteredExpenses = [];
+		setToggleFilterIncome(!toggleFilterIncome);
+		setToggleFilterExpense(!toggleFilterExpense);
+
+		userTransactions.map((exp) => {
+			if (exp.typeTransaction === "expense") {
+				filteredExpenses.push(exp);
+			}
+		});
+		console.log("FILTERED:", filteredExpenses);
+		console.log("Income:", toggleFilterIncome);
+		console.log("Expense:", toggleFilterExpense);
+		return toggleFilterExpense
+			? setFiltered(filteredExpenses)
+			: setFiltered(userTransactions);
+	}
+	//=========================================================
 	return (
 		<div className="all-transactions">
 			<div className="display-flex__between">
@@ -94,24 +144,30 @@ const AllTransactions = ({ token }) => {
 			<div className="total-inc-exp-wrapper display-flex__evenly">
 				<div className="income-total display-flex__evenly">
 					<img
-						className="icons-big"
+						onClick={filterByIncome}
+						className="income-img icons-big"
 						src="/images/Income.svg"
 						alt="INCOME-PIC"
 					/>
 					<div>
 						<p>Income</p>
-						<h3>+ ${incomeTotal}</h3>
+						<h3>{`+ $${setDotAfter3Digits(
+							profile?.totalAmount?.totalIncome
+						)}`}</h3>
 					</div>
 				</div>
 				<div className="expense-total display-flex__evenly">
 					<img
-						className="icons-big"
+						onClick={filterByExpense}
+						className="expense-img icons-big"
 						src="/images/Expense.svg"
 						alt="EXPENSE-PIC"
 					/>
 					<div>
 						<p>Expense</p>
-						<h3>- ${expenseTotal}</h3>
+						<h3>{`- $${setDotAfter3Digits(
+							profile?.totalAmount?.totalExpense
+						)}`}</h3>
 					</div>
 				</div>
 			</div>
@@ -122,7 +178,6 @@ const AllTransactions = ({ token }) => {
 						<TransactionItem
 							key={index}
 							category={e.category}
-							timeAt={e.timeAt}
 							dateAt={e.dateAt}
 							amount={e.amount}
 							typeTransaction={e.typeTransaction}
