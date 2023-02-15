@@ -8,6 +8,7 @@ import EditProfile from "./pages/Account/EditProfile/EditProfile";
 import ProfilePage from "./pages/Account/EditProfile/ProfilePage";
 import LogIn from "./pages/Account/LogIn/LogIn";
 import SignUp from "./pages/Account/SignUp/SignUp";
+import AddTransaction from "./pages/AddTransaction/AddTransaction";
 import AllTransactions from "./pages/AllTransactions/AllTransactions";
 
 function App() {
@@ -30,7 +31,7 @@ function App() {
 
 		console.log({ triggerSilentTokenRefreshInSeconds });
 		const refreshTokenTimeoutID = setTimeout(() => {
-			console.log("about to do silet refresh");
+			console.log("about to do silent refresh");
 
 			fetch(`${apiBaseUrl}/users/refresh-token`, {
 				method: "POST",
@@ -48,6 +49,7 @@ function App() {
 	return (
 		<div className="App">
 			<BrowserRouter>
+				<AddTransaction />
 				<AllTransactions token={token} />
 
 				<SignUp />

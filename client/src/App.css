@@ -29,6 +29,7 @@
 	border-radius: 20px;
 	border: 1px solid gray;
 	margin-bottom: 10px;
+	width: 98%;
 }
 .input-form__searchbar {
 	padding: 10px 10px;
@@ -52,6 +53,11 @@
 	justify-content: space-between;
 	align-items: center;
 }
+
+.direction-column {
+	flex-direction: column;
+}
+
 .logo {
 	height: 40px;
 }
@@ -65,4 +71,11 @@
 .icon-color-expense {
 	filter: invert(83%) sepia(34%) saturate(5808%) hue-rotate(344deg)
 		brightness(107%) contrast(103%);
+}
+
+.avatar-pic {
+	height: 55px;
+	width: 55px;
+	border-radius: 70px;
+	object-fit: cover;
 }

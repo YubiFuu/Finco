@@ -59,6 +59,7 @@ const AllTransactions = ({ token }) => {
 			});
 	}, [token]);
 
+	//================== Tausender Trennpunkt ==================
 	function setDotAfter3Digits(money) {
 		return money?.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.");
 	}
@@ -84,10 +85,12 @@ const AllTransactions = ({ token }) => {
 
 	// ================= Filter by Income ======================
 	function filterByIncome() {
-		let filteredExpenses = [];
-		setToggleFilterExpense((prev) => (prev = !toggleFilterExpense));
-		setToggleFilterIncome((prev) => (prev = !prev));
+		setToggleFilterExpense(false);
+		setToggleFilterIncome(!toggleFilterIncome);
+	}
 
+	useEffect(() => {
+		let filteredExpenses = [];
 		userTransactions.map((exp) => {
 			if (exp.typeTransaction === "income") {
 				filteredExpenses.push(exp);
@@ -99,27 +102,29 @@ const AllTransactions = ({ token }) => {
 		return toggleFilterIncome
 			? setFiltered(filteredExpenses)
 			: setFiltered(userTransactions);
-	}
+	}, [toggleFilterIncome]);
 	//=========================================================
 
 	// ================= Filter by Expenses ======================
 	function filterByExpense() {
-		let filteredExpenses = [];
-		setToggleFilterIncome(!toggleFilterIncome);
+		setToggleFilterIncome(false);
 		setToggleFilterExpense(!toggleFilterExpense);
+	}
 
+	useEffect(() => {
+		let filteredExpenses2 = [];
 		userTransactions.map((exp) => {
 			if (exp.typeTransaction === "expense") {
-				filteredExpenses.push(exp);
+				filteredExpenses2.push(exp);
 			}
 		});
-		console.log("FILTERED:", filteredExpenses);
+		console.log("FILTERED:", filteredExpenses2);
 		console.log("Income:", toggleFilterIncome);
 		console.log("Expense:", toggleFilterExpense);
 		return toggleFilterExpense
-			? setFiltered(filteredExpenses)
+			? setFiltered(filteredExpenses2)
 			: setFiltered(userTransactions);
-	}
+	}, [toggleFilterExpense]);
 	//=========================================================
 	return (
 		<div className="all-transactions">
@@ -129,7 +134,7 @@ const AllTransactions = ({ token }) => {
 					src="/images/Finco2.svg"
 					alt="finco-logo"
 				/>
-				<Avatar />
+				<Avatar token={token} />
 			</div>
 			<div className="search-row">
 				<h2>All Transactions</h2>
