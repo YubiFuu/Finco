@@ -36,7 +36,7 @@ function App() {
 
         console.log({ triggerSilentTokenRefreshInSeconds });
         const refreshTokenTimeoutID = setTimeout(() => {
-            console.log("about to do silet refresh");
+            console.log("about to do silent refresh");
 
             fetch(`${apiBaseUrl}/users/refresh-token`, {
                 method: "POST",
