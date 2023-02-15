@@ -3,13 +3,17 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { apiBaseUrl } from "./api";
 import "./App.css";
 import Protected from "./components/Protected/Protected";
-import TransactionsForm from "./components/TransactionsForm/TransactionsForm";
 import EditProfile from "./pages/Account/EditProfile/EditProfile";
 import ProfilePage from "./pages/Account/EditProfile/ProfilePage";
 import LogIn from "./pages/Account/LogIn/LogIn";
+import LogOut from "./pages/Account/LogOut/LogOut";
 import SignUp from "./pages/Account/SignUp/SignUp";
 import Home from "./pages/Home/Home";
 import AllTransactions from "./pages/AllTransactions/AllTransactions";
+import ForgotPassword from "./pages/Account/ForgotPassword/ForgotPassword";
+// import AddTransaction from "./pages/AddTransaction/AddTransaction";
+// import ReportPage from "./pages/ReportPage/ReportPage";
+import NavBar from "./components/NavBar/NavBar";
 
 function App() {
     const [token, setToken] = useState(null);
@@ -49,15 +53,70 @@ function App() {
     return (
         <div className="App">
             <BrowserRouter>
-                <AllTransactions token={token} />
-                <Home token={token} />
-
-                <SignUp />
-                <EditProfile />
-                <LogIn setToken={setToken} />
-                <Protected token={token} setToken={setToken}>
-                    <ProfilePage token={token} />
-                </Protected>
+                <NavBar />
+                <Routes>
+                    <Route
+                        path="/login"
+                        element={<LogIn setToken={setToken} />}
+                    />
+                    <Route
+                        path="/logout"
+                        element={<LogOut setToken={setToken} />}
+                    />
+                    <Route path="/register" element={<SignUp />} />
+                    <Route
+                        path="/forgot-password"
+                        element={<ForgotPassword />}
+                    />
+                    <Route
+                        path="/"
+                        element={
+                            <Protected token={token} setToken={setToken}>
+                                <Home token={token} />
+                            </Protected>
+                        }
+                    />
+                    <Route
+                        path="/edit-profile"
+                        element={
+                            <Protected token={token} setToken={setToken}>
+                                <EditProfile token={token} />
+                            </Protected>
+                        }
+                    />
+                    <Route
+                        path="/profile"
+                        element={
+                            <Protected token={token} setToken={setToken}>
+                                <ProfilePage token={token} />
+                            </Protected>
+                        }
+                    />
+                    <Route
+                        path="/all-transactions"
+                        element={
+                            <Protected token={token} setToken={setToken}>
+                                <AllTransactions token={token} />
+                            </Protected>
+                        }
+                    />
+                    {/* <Route
+                        path="/add-transactions"
+                        element={
+                            <Protected token={token} setToken={setToken}>
+                                <AddTransaction token={token} />
+                            </Protected>
+                        }
+                    /> */}
+                    {/* <Route
+                        path="/report"
+                        element={
+                            <Protected token={token} setToken={setToken}>
+                                <ReportPage token={token} />
+                            </Protected>
+                        }
+                    /> */}
+                </Routes>
             </BrowserRouter>
         </div>
     );

@@ -26,7 +26,7 @@ const Home = ({ token }) => {
     }, [token]);
 
     function setDotAfter3Digits(money) {
-        return money.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.");
+        return money?.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.");
     }
     return (
         <main className="home">
@@ -42,7 +42,7 @@ const Home = ({ token }) => {
                         alt="total amount"
                     />
                     <div>
-                        <p>Total amount</p>
+                        <p>Current balance</p>
                         <h3>{`$${setDotAfter3Digits(
                             profile?.totalAmount?.amount
                         )}`}</h3>
@@ -56,7 +56,7 @@ const Home = ({ token }) => {
                                 src="/images/Income.svg"
                                 alt="income"
                             />
-                            <p>Total income</p>
+                            <p>Income</p>
                             <h3>{`+ $${setDotAfter3Digits(
                                 profile?.totalAmount?.totalIncome
                             )}`}</h3>
@@ -69,7 +69,7 @@ const Home = ({ token }) => {
                                 src="/images/Expense.svg"
                                 alt="expense"
                             />
-                            <p>Total expense</p>
+                            <p>Expense</p>
                             <h3>{`- $${setDotAfter3Digits(
                                 profile?.totalAmount?.totalExpense
                             )}`}</h3>

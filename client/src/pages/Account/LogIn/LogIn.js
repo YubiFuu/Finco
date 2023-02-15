@@ -31,7 +31,7 @@ const LogIn = ({ setToken }) => {
                 }
                 // result: { acccessToken, refreshToken }
                 setToken(result.accessToken);
-                return navigate("/home");
+                return navigate("/");
             });
     }
 

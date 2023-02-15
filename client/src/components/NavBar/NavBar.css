@@ -1,0 +1,15 @@
+nav {
+    position: fixed;
+    bottom: 0;
+    width: 480px;
+    background-color: white;
+}
+nav ul {
+    display: grid;
+    list-style: none;
+    grid-template-columns: repeat(4, 1fr);
+}
+nav ul li {
+    text-align: center;
+    padding: 10px 0;
+}
