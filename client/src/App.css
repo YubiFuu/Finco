@@ -29,7 +29,7 @@
 	border-radius: 20px;
 	border: 1px solid gray;
 	margin-bottom: 10px;
-	width: 98%;
+	width: 100%;
 }
 .input-form__searchbar {
 	padding: 10px 10px;
@@ -64,6 +64,11 @@
 .icons-big {
 	height: 50px;
 }
+
+.back-button {
+	height: 20px;
+}
+
 .icon-color-income {
 	filter: invert(49%) sepia(98%) saturate(1758%) hue-rotate(192deg)
 		brightness(97%) contrast(109%);

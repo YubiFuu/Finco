@@ -19,3 +19,7 @@
 .expense-img:hover {
 	cursor: pointer;
 }
+
+/* .all-transactions {
+	overflow: scroll;
+} */

@@ -71,7 +71,11 @@ const AllTransactions = ({ token }) => {
 		let filteredExpenses = [];
 
 		userTransactions.map((exp) => {
-			if (exp.category.includes(userInput.value.toString())) {
+			if (
+				exp.category
+					.toLowerCase()
+					.includes(userInput.value.toString().toLowerCase())
+			) {
 				filteredExpenses.push(exp);
 			}
 		});

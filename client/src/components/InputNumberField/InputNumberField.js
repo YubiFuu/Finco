@@ -24,8 +24,8 @@ function NumberInput(props) {
 	function handleChange(event) {
 		// Entferne alle Nicht-Zahlen aus dem Eingabewert
 		const value = event.target.value.replace(/[^0-9]/g, "");
-		props.onSetValue(value);
 		setValue(value);
+		props.onSetValue(value);
 	}
 
 	return (
