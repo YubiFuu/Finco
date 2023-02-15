@@ -1,14 +1,11 @@
 const mongoose = require("mongoose");
 
-const avatarPlaceHolder =
-    "https://hszteam.de/wp-content/uploads/2021/01/avatar-placeholder.gif";
-
 const userSchema = new mongoose.Schema(
     {
         firstName: { type: String, required: true },
         lastName: { type: String, required: true },
         email: { type: String, required: true },
-        profilePicture: { type: String, default: avatarPlaceHolder },
+        profilePicture: { type: String },
         cardNumber: { type: String, default: "00000000" },
         monthlyLimit: { type: Number, default: 6000 },
         monthlyTransaction: [

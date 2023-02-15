@@ -4,7 +4,6 @@ import { apiBaseUrl } from "./api";
 import "./App.css";
 import Protected from "./components/Protected/Protected";
 import EditProfile from "./pages/Account/EditProfile/EditProfile";
-import ProfilePage from "./pages/Account/EditProfile/ProfilePage";
 import LogIn from "./pages/Account/LogIn/LogIn";
 import LogOut from "./pages/Account/LogOut/LogOut";
 import SignUp from "./pages/Account/SignUp/SignUp";
@@ -17,6 +16,8 @@ import NavBar from "./components/NavBar/NavBar";
 
 function App() {
     const [token, setToken] = useState(null);
+    const [isFromSignUp, setIsFromSignUp] = useState(false);
+
     console.log(Date.now(), token);
     useEffect(() => {
         if (!token) {
@@ -63,7 +64,10 @@ function App() {
                         path="/logout"
                         element={<LogOut setToken={setToken} />}
                     />
-                    <Route path="/register" element={<SignUp />} />
+                    <Route
+                        path="/register"
+                        element={<SignUp setIsFromSignUp={setIsFromSignUp} />}
+                    />
                     <Route
                         path="/forgot-password"
                         element={<ForgotPassword />}
@@ -79,16 +83,13 @@ function App() {
                     <Route
                         path="/edit-profile"
                         element={
-                            <Protected token={token} setToken={setToken}>
+                            <Protected
+                                token={token}
+                                setToken={setToken}
+                                isFromSignUp={isFromSignUp}
+                                setIsFromSignUp={setIsFromSignUp}
+                            >
                                 <EditProfile token={token} />
-                            </Protected>
-                        }
-                    />
-                    <Route
-                        path="/profile"
-                        element={
-                            <Protected token={token} setToken={setToken}>
-                                <ProfilePage token={token} />
                             </Protected>
                         }
                     />

@@ -65,7 +65,7 @@ const LogIn = ({ setToken }) => {
             </form>
 
             <p>
-                Don't have any account? <Link>Sing up</Link>
+                Don't have any account? <Link to="/register">Sing up</Link>
             </p>
         </div>
     );
