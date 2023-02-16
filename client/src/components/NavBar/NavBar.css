@@ -6,6 +6,7 @@ nav {
 }
 nav ul {
     display: grid;
+    align-items: center;
     list-style: none;
     grid-template-columns: repeat(4, 1fr);
 }
@@ -15,4 +16,16 @@ nav ul li {
 }
 .icons-nav {
     height: 40px;
+}
+.active svg {
+    display: none;
+}
+
+.is-active {
+    display: none;
+}
+
+.active .is-active {
+    display: block;
+    color: #0d1636;
 }

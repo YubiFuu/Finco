@@ -16,6 +16,7 @@ const AllTransactions = ({ token }) => {
     const [filtered, setFiltered] = useState([]);
     const [toggleFilterIncome, setToggleFilterIncome] = useState(false);
     const [toggleFilterExpense, setToggleFilterExpense] = useState(false);
+    const [searchActive, setSearchActive] = useState(false);
 
     console.log("AllTransactions:", token);
 
@@ -126,8 +127,15 @@ const AllTransactions = ({ token }) => {
             : setFiltered(userTransactions);
     }, [toggleFilterExpense]);
     //=========================================================
+
+    console.log(searchActive);
     return (
-        <div className="all-transactions">
+        <div
+            className="all-transactions"
+            onClick={() =>
+                searchActive === true ? setSearchActive(false) : null
+            }
+        >
             <NavBar />
             <header className="display-flex__between">
                 <img
@@ -140,18 +148,18 @@ const AllTransactions = ({ token }) => {
             <div className="search-row">
                 <h2>All Transactions</h2>
                 <input
+                    className={searchActive && "search-active"}
                     id="search-input"
+                    onClick={() => setSearchActive(true)}
                     onChange={filterByName}
                     type="text"
-                    placeholder="🔍"
                 />
                 <input type="date" />
             </div>
             <div className="total-inc-exp-wrapper display-flex__evenly">
-                <div className="round grey">
+                <div onClick={filterByIncome} className="income-img round grey">
                     <img
-                        onClick={filterByIncome}
-                        className="income-img icons-big"
+                        className="icons-big"
                         src="/images/Income.svg"
                         alt="INCOME-PIC"
                     />
@@ -162,10 +170,12 @@ const AllTransactions = ({ token }) => {
                         )}`}</h3>
                     </div>
                 </div>
-                <div className="round grey">
+                <div
+                    onClick={filterByExpense}
+                    className="expense-img round grey"
+                >
                     <img
-                        onClick={filterByExpense}
-                        className="expense-img icons-big"
+                        className=" icons-big"
                         src="/images/Expense.svg"
                         alt="EXPENSE-PIC"
                     />

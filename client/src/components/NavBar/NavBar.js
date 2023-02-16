@@ -1,44 +1,37 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./NavBar.css";
+import HomeIcon from "../../assets/images/HomeIcon";
+import CardIcon from "../../assets/images/CardIcon";
+import PieCircleIcon from "../../assets/images/PieCircleIcon";
+import PlusCircleIcon from "../../assets/images/PlusCircleIcon";
+
 const NavBar = () => {
     return (
         <nav>
             <ul>
                 <li>
-                    <Link to="/">
-                        <img
-                            className="icons-nav"
-                            src="/images/homeIcon.svg"
-                            alt="home icon"
-                        />
-                    </Link>
+                    <NavLink to="/">
+                        <HomeIcon />
+                        <p className="is-active">Home</p>
+                    </NavLink>
                 </li>
                 <li>
-                    <Link to="/all-transactions">
-                        <img
-                            className="icons-nav"
-                            src="/images/credit-card-icon.svg"
-                            alt="transaction icon"
-                        />
-                    </Link>
+                    <NavLink to="/all-transactions">
+                        <CardIcon />
+                        <p className="is-active">Transactions</p>
+                    </NavLink>
                 </li>
                 <li>
-                    <Link to="/add-transaction">
-                        <img
-                            className="icons-nav"
-                            src="/images/plus-circle-icon.svg"
-                            alt="add transaction icon"
-                        />
-                    </Link>
+                    <NavLink to="/add-transactions">
+                        <PlusCircleIcon />
+                        <p className="is-active">Add</p>
+                    </NavLink>
                 </li>
                 <li>
-                    <Link to="/report">
-                        <img
-                            className="icons-nav"
-                            src="/images/pie-chart-icon.svg"
-                            alt="report icon"
-                        />
-                    </Link>
+                    <NavLink to="/report">
+                        <PieCircleIcon />
+                        <p className="is-active">Report</p>
+                    </NavLink>
                 </li>
             </ul>
         </nav>
