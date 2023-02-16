@@ -2,7 +2,9 @@ import { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { apiBaseUrl } from "./api";
 import "./App.css";
+import NavBar from "./components/NavBar/NavBar";
 import Protected from "./components/Protected/Protected";
+import AccountPage from "./pages/Account/AccountPage/AccountPage";
 import EditProfile from "./pages/Account/EditProfile/EditProfile";
 import ForgotPassword from "./pages/Account/ForgotPassword/ForgotPassword";
 import LogIn from "./pages/Account/LogIn/LogIn";
@@ -11,9 +13,7 @@ import SignUp from "./pages/Account/SignUp/SignUp";
 import AddTransaction from "./pages/AddTransaction/AddTransaction";
 import AllTransactions from "./pages/AllTransactions/AllTransactions";
 import Home from "./pages/Home/Home";
-// import ReportPage from "./pages/ReportPage/ReportPage";
-import NavBar from "./components/NavBar/NavBar";
-import AccountPage from "./pages/Account/AccountPage/AccountPage";
+import ReportPage from "./pages/ReportPage/ReportPage";
 
 function App() {
 	const [token, setToken] = useState(null);
@@ -119,14 +119,14 @@ function App() {
 							</Protected>
 						}
 					/>
-					{/* <Route
-                        path="/report"
-                        element={
-                            <Protected token={token} setToken={setToken}>
-                                <ReportPage token={token} />
-                            </Protected>
-                        }
-                    /> */}
+					<Route
+						path="/report"
+						element={
+							<Protected token={token} setToken={setToken}>
+								<ReportPage token={token} />
+							</Protected>
+						}
+					/>
 				</Routes>
 			</BrowserRouter>
 		</div>
