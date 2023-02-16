@@ -1,0 +1,48 @@
+.account-page .wrapper-left {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 40px;
+	width: 80%;
+}
+
+.account-page .outer-wrapper__small {
+	display: flex;
+	padding: 17px 20px;
+	border-radius: 15px;
+	background-color: #f7f7f7;
+	align-items: center;
+	margin: 30px 0 30px 0;
+}
+.account-page .outer-wrapper__small-2 {
+	display: flex;
+	padding: 17px 20px;
+
+	background-color: #f7f7f7;
+	align-items: center;
+}
+
+.account-page .back-button {
+	padding-left: 30px;
+}
+
+.account-page .middle-section-wrapper {
+	border-radius: 15px;
+}
+
+.account-page .corner-top__rounded {
+	border-radius: 15px 15px 0 0;
+	border-bottom: 3px solid rgb(232, 232, 232);
+}
+.account-page .corner-bottom__rounded {
+	border-radius: 0 0 15px 15px;
+}
+
+.account-page .settings {
+	border-bottom: 3px solid rgb(232, 232, 232);
+}
+
+.account-page a {
+	text-decoration: none;
+	color: #0d1636;
+}
