@@ -5,8 +5,8 @@ import Button from "../../../components/Button/Button";
 import "./LogIn.css";
 
 const LogIn = ({ setToken }) => {
-    const [email, setEmail] = useState("jess.btk@gmail.com");
-    const [password, setPassword] = useState("12345678");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
 
     const navigate = useNavigate();
@@ -36,37 +36,52 @@ const LogIn = ({ setToken }) => {
     }
 
     return (
-        <div className="login-page">
-            <h2>This is Login</h2>
-            <p>Welcome back!</p>
-
-            <form className="input-wrapper">
-                <input
-                    className="input-form"
-                    type="email"
-                    placeholder="Email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+        <div className="login-page body-column">
+            <header className="display-flex__between">
+                <img
+                    className="logo"
+                    src="/images/Finco2.svg"
+                    alt="finco-logo"
                 />
-                <input
-                    className="input-form"
-                    type="password"
-                    placeholder="Password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                />
-                <Link>Forgot password?</Link>
-                <Button buttonName={"Login"} function={login}>
-                    Login
-                </Button>
-                {errorMessage && (
-                    <p className="error-message">{errorMessage}</p>
-                )}
-            </form>
-
-            <p>
-                Don't have any account? <Link to="/register">Sing up</Link>
-            </p>
+                <div></div>
+            </header>
+            <main>
+                <div className="div-centered">
+                    <h1>Welcome back!</h1>
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit. Cupiditate, ad!
+                    </p>
+                </div>
+                <form className="input-wrapper">
+                    <input
+                        type="email"
+                        placeholder="Email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
+                    <input
+                        type="password"
+                        placeholder="Password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
+                    <Link to="/forgot-password" className="forgot-password">
+                        Forgot password?
+                    </Link>
+                    <Button buttonName={"Login"} function={login}>
+                        Login
+                    </Button>
+                    {errorMessage && (
+                        <p className="error-message">{errorMessage}</p>
+                    )}
+                </form>
+            </main>
+            <footer>
+                <p>
+                    Don't have any account? <Link to="/register">Sign up</Link>
+                </p>
+            </footer>
         </div>
     );
 };

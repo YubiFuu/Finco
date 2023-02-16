@@ -1,21 +1,14 @@
 .all-transactions .search-row {
-	display: flex;
-	justify-content: space-evenly;
-	align-items: center;
-}
-
-.all-transactions .income-total,
-.expense-total {
-	background-color: rgb(239, 239, 239);
-	border-radius: 50px;
-	flex-grow: 1;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .all-transactions .total-inc-exp-wrapper {
-	gap: 20px;
+    gap: 20px;
 }
 
 .income-img:hover,
 .expense-img:hover {
-	cursor: pointer;
+    cursor: pointer;
 }

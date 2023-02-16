@@ -79,7 +79,15 @@ const EditProfile = ({ token, isFromSignUp, setIsFromSignUp }) => {
 
     return (
         <div className="edit-profile">
-            <h2>{isFromSignUp ? "Set up" : "Edit"} your account</h2>
+            <header className="display-flex__between">
+                <img
+                    className="logo"
+                    src="/images/Finco2.svg"
+                    alt="finco-logo"
+                />
+                <div></div>
+            </header>
+            <h1>{isFromSignUp ? "Set up" : "Edit"} your account</h1>
             <p>Profile picture</p>
             <img src={profilePicturePreview} alt="profile-picture" />
             <input
@@ -88,7 +96,6 @@ const EditProfile = ({ token, isFromSignUp, setIsFromSignUp }) => {
             />
             <div>📸</div>
             <input
-                className="input-form"
                 type="text"
                 placeholder="Card number"
                 onChange={(e) => setCardNumber(e.target.value)}
@@ -96,7 +103,6 @@ const EditProfile = ({ token, isFromSignUp, setIsFromSignUp }) => {
             <div>
                 <div>⚠</div>
                 <input
-                    className="input-form"
                     type="text"
                     placeholder="Monthly Limit"
                     onChange={(e) => setMonthlyLimit(Number(e.target.value))}

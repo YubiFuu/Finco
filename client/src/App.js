@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { apiBaseUrl } from "./api";
 import "./App.css";
 import Protected from "./components/Protected/Protected";
@@ -40,7 +40,7 @@ function App() {
 
             fetch(`${apiBaseUrl}/users/refresh-token`, {
                 method: "POST",
-                credentials: "include", // here: take refresh token from httpOnly secure cookie and send it
+                credentials: "include",
             })
                 .then((res) => res.json())
                 .then(({ result }) => {
@@ -54,7 +54,6 @@ function App() {
     return (
         <div className="App">
             <BrowserRouter>
-                <NavBar />
                 <Routes>
                     <Route
                         path="/login"

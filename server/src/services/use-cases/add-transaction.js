@@ -43,10 +43,15 @@ async function addTransaction({
                     {
                         $push: {
                             monthlyTransaction: {
-                                month: monthYear,
-                                [typeTransaction === "income"
-                                    ? "monthlyIncome"
-                                    : "monthlyExpense"]: Number(amount),
+                                $each: [
+                                    {
+                                        month: monthYear,
+                                        [typeTransaction === "income"
+                                            ? "monthlyIncome"
+                                            : "monthlyExpense"]: Number(amount),
+                                    },
+                                ],
+                                $position: 0,
                             },
                         },
                     },
@@ -57,10 +62,15 @@ async function addTransaction({
                     {
                         $push: {
                             transaction: {
-                                amount,
-                                typeTransaction,
-                                category,
-                                dateAt,
+                                $each: [
+                                    {
+                                        amount,
+                                        typeTransaction,
+                                        category,
+                                        dateAt,
+                                    },
+                                ],
+                                $position: 0,
                             },
                         },
                         $inc: {
@@ -106,10 +116,15 @@ async function addTransaction({
                     {
                         $push: {
                             transaction: {
-                                amount,
-                                typeTransaction,
-                                category,
-                                dateAt,
+                                $each: [
+                                    {
+                                        amount,
+                                        typeTransaction,
+                                        category,
+                                        dateAt,
+                                    },
+                                ],
+                                $position: 0,
                             },
                         },
                         $inc: {

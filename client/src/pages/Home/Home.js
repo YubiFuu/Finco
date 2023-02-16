@@ -2,6 +2,7 @@ import "./Home.css";
 import Card from "../../components/Card/Card";
 import { useEffect, useState } from "react";
 import { apiBaseUrl } from "../../api";
+import NavBar from "../../components/NavBar/NavBar";
 
 const Home = ({ token }) => {
     const [profile, setProfile] = useState([]);
@@ -30,12 +31,13 @@ const Home = ({ token }) => {
     }
     return (
         <main className="home">
+            <NavBar />
             <p>Welcome back.</p>
             <h1>{`${profile?.firstName} ${profile?.lastName}`}</h1>
             <Card profile={profile}></Card>
             <h2>Your wallet</h2>
             <div className="wallet">
-                <div className="full-sized">
+                <div className="round grey">
                     <img
                         className="icons-big"
                         src="/images/monthly-limit-icon.svg"
@@ -76,7 +78,7 @@ const Home = ({ token }) => {
                         </div>
                     </div>
                 </div>
-                <div className="full-sized">
+                <div className="round grey">
                     <img
                         className="icons-big"
                         src="/images/monthly-limit-icon.svg"

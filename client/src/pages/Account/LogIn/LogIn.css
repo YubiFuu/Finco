@@ -1,9 +1,18 @@
 .login-page {
-	display: flex;
-	flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .login-page .input-wrapper {
-	display: flex;
-	flex-direction: column;
+    display: flex;
+    flex-direction: column;
+}
+
+.forgot-password {
+    font-size: 1.4rem;
+    text-align: right;
+    text-decoration: none;
+    color: #0d1636;
+    font-family: "Urbanist";
+    margin-bottom: 80px;
 }

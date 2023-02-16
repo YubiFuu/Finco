@@ -1,81 +1,150 @@
+@font-face {
+    font-family: "Urbanist";
+    src: url("../public/fonts/Urbanist.ttf");
+}
 * {
-	margin: 0px;
-	padding: 0px;
-	box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "Urbanist";
+    font-size: 67.5%;
+}
+body {
+    min-height: 100vh;
+}
+.body-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+
+p {
+    font-size: 1.4rem;
+    color: #565c72;
+}
+h1 {
+    font-size: 2.8rem;
+    color: #0d1636;
+}
+h2 {
+    font-size: 1.8rem;
+}
+
+input:not([type="checkbox"]) {
+    padding: 20px;
+    border-radius: 50px;
+    border: 1px solid #ebebeb;
+    font-family: "Urbanist";
+    color: #0d1636;
+    margin-bottom: 16px;
+    width: 98%;
+}
+
+header {
+    margin: 48px 26px;
+}
+main {
+    margin: 0 36px;
+}
+footer {
+    margin-top: auto;
+    margin-bottom: 15%;
+    text-align: center;
+}
+footer a {
+    text-decoration: none;
+    background: linear-gradient(to bottom, #44bbfe, #1e78fe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.error-message {
+    color: red;
 }
 
 .blue-button {
-	padding: 10px 80px;
-	border-radius: 20px;
-	border: none;
-	background: linear-gradient(
-		to bottom,
-		rgb(66, 166, 252),
-		rgb(32, 123, 254)
-	);
-	color: white;
+    width: 100%;
+    justify-content: center;
+    border-radius: 50px;
+    display: flex;
+    padding: 20px;
+    border: none;
+    font-family: "Urbanist";
+    font-size: 1.8rem;
+    background: linear-gradient(to bottom, #44bbfe, #1e78fe);
+    color: white;
 }
 
 .blue-button:hover {
-	cursor: pointer;
+    cursor: pointer;
 }
 .App {
-	max-width: 480px;
-	margin: 0 auto;
-}
-
-.input-form {
-	padding: 10px 10px;
-	border-radius: 20px;
-	border: 1px solid gray;
-	margin-bottom: 10px;
-	width: 98%;
-}
-.input-form__searchbar {
-	padding: 10px 10px;
-	width: 90%;
-	border-radius: 20px;
-	border: 1px solid gray;
+    max-width: 375px;
+    margin: 0 auto;
 }
 
 .display-flex__centered {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .display-flex__evenly {
-	display: flex;
-	justify-content: space-evenly;
-	align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
 .display-flex__between {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .direction-column {
-	flex-direction: column;
+    flex-direction: column;
 }
 
 .logo {
-	height: 40px;
+    height: 40px;
 }
 .icons-big {
-	height: 50px;
+    height: 50px;
 }
+
 .icon-color-income {
-	filter: invert(49%) sepia(98%) saturate(1758%) hue-rotate(192deg)
-		brightness(97%) contrast(109%);
+    filter: invert(49%) sepia(98%) saturate(1758%) hue-rotate(192deg)
+        brightness(97%) contrast(109%);
 }
 .icon-color-expense {
-	filter: invert(83%) sepia(34%) saturate(5808%) hue-rotate(344deg)
-		brightness(107%) contrast(103%);
+    filter: invert(83%) sepia(34%) saturate(5808%) hue-rotate(344deg)
+        brightness(107%) contrast(103%);
 }
 
 .avatar-pic {
-	height: 55px;
-	width: 55px;
-	border-radius: 70px;
-	object-fit: cover;
+    height: 55px;
+    width: 55px;
+    border-radius: 70px;
+    object-fit: cover;
+}
+.round {
+    border-radius: 50px;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    gap: 15px;
+}
+.grey {
+    background-color: #f7f7f7;
+}
+
+.div-centered {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 82px;
 }

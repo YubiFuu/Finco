@@ -7,7 +7,7 @@ const NavBar = () => {
                 <li>
                     <Link to="/">
                         <img
-                            className="icons-big"
+                            className="icons-nav"
                             src="/images/homeIcon.svg"
                             alt="home icon"
                         />
@@ -16,7 +16,7 @@ const NavBar = () => {
                 <li>
                     <Link to="/all-transactions">
                         <img
-                            className="icons-big"
+                            className="icons-nav"
                             src="/images/credit-card-icon.svg"
                             alt="transaction icon"
                         />
@@ -25,7 +25,7 @@ const NavBar = () => {
                 <li>
                     <Link to="/add-transaction">
                         <img
-                            className="icons-big"
+                            className="icons-nav"
                             src="/images/plus-circle-icon.svg"
                             alt="add transaction icon"
                         />
@@ -34,7 +34,7 @@ const NavBar = () => {
                 <li>
                     <Link to="/report">
                         <img
-                            className="icons-big"
+                            className="icons-nav"
                             src="/images/pie-chart-icon.svg"
                             alt="report icon"
                         />

@@ -47,57 +47,67 @@ const SignUp = ({ setIsFromSignUp }) => {
     }
 
     return (
-        <div className="sign-up">
-            <h2>Create an account</h2>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex
-                debitis sit esse sint deleniti.
-            </p>
-
-            <form className="input-wrapper">
-                <input
-                    className="input-form"
-                    type="text"
-                    placeholder="Name"
-                    value={firstName}
-                    onChange={(e) => setFirstName(e.target.value)}
+        <div className="sign-up body-column">
+            <header className="display-flex__between">
+                <img
+                    className="logo"
+                    src="/images/Finco2.svg"
+                    alt="finco-logo"
                 />
-                <input
-                    className="input-form"
-                    type="text"
-                    placeholder="Last Name"
-                    value={lastName}
-                    onChange={(e) => setLastName(e.target.value)}
-                />
-                <input
-                    className="input-form"
-                    type="email"
-                    placeholder="Email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                />
-                <input
-                    className="input-form"
-                    type="password"
-                    placeholder="Password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                />
+                <div></div>
+            </header>
+            <main>
+                <div className="div-centered">
+                    <h1>Create an account</h1>
+                    {errorMessage ? (
+                        <p className="error-message">{errorMessage}</p>
+                    ) : (
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Ex debitis sit esse sint deleniti.
+                        </p>
+                    )}
+                </div>
 
-                <Button buttonName={"Register Now"} function={register} />
-                {errorMessage && (
-                    <p className="error-message">{errorMessage}</p>
-                )}
-            </form>
-
-            <div className="checkbox-wrapper">
-                <input type="checkbox" />
-                <p>Agree to our Terms and Service</p>
-            </div>
-
-            <p>
-                Already have an account? <Link />
-            </p>
+                <form className="input-wrapper">
+                    <input
+                        type="text"
+                        placeholder="Name"
+                        value={firstName}
+                        onChange={(e) => setFirstName(e.target.value)}
+                    />
+                    <input
+                        type="text"
+                        placeholder="Last Name"
+                        value={lastName}
+                        onChange={(e) => setLastName(e.target.value)}
+                    />
+                    <input
+                        type="email"
+                        placeholder="Email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
+                    <input
+                        type="password"
+                        placeholder="Password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
+                    <div className="checkbox-wrapper">
+                        <input type="checkbox" required />
+                        <p>
+                            Agree to our <b>Terms and Service</b>
+                        </p>
+                    </div>
+                    <Button buttonName={"Register Now"} function={register} />
+                </form>
+            </main>
+            <footer>
+                <p>
+                    Already have an account? <Link to="/login">Log in</Link>
+                </p>
+            </footer>
         </div>
     );
 };
