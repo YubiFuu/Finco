@@ -67,7 +67,6 @@ footer a {
 }
 
 .blue-button {
-<<<<<<< HEAD
     width: 100%;
     justify-content: center;
     border-radius: 50px;
@@ -78,45 +77,14 @@ footer a {
     font-size: 1.8rem;
     background: linear-gradient(to bottom, #44bbfe, #1e78fe);
     color: white;
-=======
-	padding: 10px 80px;
-	border-radius: 20px;
-	border: none;
-	width: 100%;
-	background: linear-gradient(
-		to bottom,
-		rgb(66, 166, 252),
-		rgb(32, 123, 254)
-	);
-	color: white;
->>>>>>> main
 }
 
 .blue-button:hover {
     cursor: pointer;
 }
 .App {
-<<<<<<< HEAD
     max-width: 375px;
     margin: 0 auto;
-=======
-	max-width: 480px;
-	margin: 0 auto;
-}
-
-.input-form {
-	padding: 10px 10px;
-	border-radius: 20px;
-	border: 1px solid gray;
-	margin-bottom: 10px;
-	width: 100%;
-}
-.input-form__searchbar {
-	padding: 10px 10px;
-	width: 30%;
-	border-radius: 20px;
-	border: 1px solid gray;
->>>>>>> main
 }
 
 .display-flex__centered {
@@ -146,13 +114,10 @@ footer a {
     height: 50px;
 }
 
-<<<<<<< HEAD
-=======
 .back-button {
-	height: 20px;
+    height: 20px;
 }
 
->>>>>>> main
 .icon-color-income {
     filter: invert(49%) sepia(98%) saturate(1758%) hue-rotate(192deg)
         brightness(97%) contrast(109%);
@@ -189,5 +154,5 @@ footer a {
 }
 
 .required {
-	border: 2px solid red;
+    border: 2px solid red;
 }
