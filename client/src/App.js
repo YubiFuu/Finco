@@ -13,6 +13,7 @@ import AllTransactions from "./pages/AllTransactions/AllTransactions";
 import Home from "./pages/Home/Home";
 // import ReportPage from "./pages/ReportPage/ReportPage";
 import NavBar from "./components/NavBar/NavBar";
+import AccountPage from "./pages/Account/AccountPage/AccountPage";
 
 function App() {
     const [token, setToken] = useState(null);
@@ -54,6 +55,7 @@ function App() {
     return (
         <div className="App">
             <BrowserRouter>
+                {/* <NavBar /> */}
                 <Routes>
                     <Route
                         path="/login"
@@ -106,6 +108,14 @@ function App() {
                         element={
                             <Protected token={token} setToken={setToken}>
                                 <AddTransaction token={token} />
+                            </Protected>
+                        }
+                    />
+                    <Route
+                        path="/account"
+                        element={
+                            <Protected token={token} setToken={setToken}>
+                                <AccountPage token={token} />
                             </Protected>
                         }
                     />
