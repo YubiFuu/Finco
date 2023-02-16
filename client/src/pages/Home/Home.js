@@ -33,13 +33,8 @@ const Home = ({ token }) => {
 	return (
 		<main className="home">
 			<NavBar />
-			<section className="display-flex__between">
-				<div>
-					<p>Welcome back.</p>
-					<h1>{`${profile?.firstName} ${profile?.lastName}`}</h1>
-				</div>
-				<Avatar token={token} />
-			</section>
+			<p>Welcome back.</p>
+			<h1>{`${profile?.firstName} ${profile?.lastName}`}</h1>
 			<Card profile={profile}></Card>
 			<h2>Your wallet</h2>
 			<div className="wallet">
