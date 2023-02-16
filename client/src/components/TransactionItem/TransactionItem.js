@@ -4,7 +4,7 @@ const TransactionItem = (props) => {
 	const expensesIconsPath = "./images/catagoryIcons/Expenses";
 	const incomeIconsPath = "./images/catagoryIcons/income";
 	function pickIcon() {
-		if (props.category === "food&drink") {
+		if (props.category === "Food&Drink") {
 			return (
 				<img
 					className="logo icon-color-expense"
@@ -13,7 +13,7 @@ const TransactionItem = (props) => {
 				/>
 			);
 		}
-		if (props.category === "shopping") {
+		if (props.category === "Shopping") {
 			return (
 				<img
 					className="logo icon-color-expense"
@@ -22,7 +22,7 @@ const TransactionItem = (props) => {
 				/>
 			);
 		}
-		if (props.category === "insurance") {
+		if (props.category === "Insurance") {
 			return (
 				<img
 					className="logo icon-color-expense"
@@ -31,7 +31,7 @@ const TransactionItem = (props) => {
 				/>
 			);
 		}
-		if (props.category === "taxes") {
+		if (props.category === "Taxes") {
 			return (
 				<img
 					className="logo icon-color-expense"
@@ -40,7 +40,7 @@ const TransactionItem = (props) => {
 				/>
 			);
 		}
-		if (props.category === "rent") {
+		if (props.category === "Rent") {
 			return (
 				<img
 					className="logo icon-color-expense"
@@ -49,7 +49,7 @@ const TransactionItem = (props) => {
 				/>
 			);
 		}
-		if (props.category === "transportation") {
+		if (props.category === "Transportation") {
 			return (
 				<img
 					className="logo icon-color-expense"
@@ -58,7 +58,7 @@ const TransactionItem = (props) => {
 				/>
 			);
 		}
-		if (props.category === "personal") {
+		if (props.category === "Personal") {
 			return (
 				<img
 					className="logo icon-color-expense"
@@ -67,7 +67,7 @@ const TransactionItem = (props) => {
 				/>
 			);
 		}
-		if (props.category === "healthcare") {
+		if (props.category === "Healthcare") {
 			return (
 				<img
 					className="logo icon-color-expense"
@@ -76,7 +76,7 @@ const TransactionItem = (props) => {
 				/>
 			);
 		}
-		if (props.category === "others-exp") {
+		if (props.category === "Other Expenses") {
 			return (
 				<img
 					className="logo icon-color-expense"
@@ -85,7 +85,7 @@ const TransactionItem = (props) => {
 				/>
 			);
 		}
-		if (props.category === "salary") {
+		if (props.category === "Salary") {
 			return (
 				<img
 					className="logo icon-color-income"
@@ -94,7 +94,7 @@ const TransactionItem = (props) => {
 				/>
 			);
 		}
-		if (props.category === "passive") {
+		if (props.category === "Passive Income") {
 			return (
 				<img
 					className="logo icon-color-income"
@@ -103,7 +103,7 @@ const TransactionItem = (props) => {
 				/>
 			);
 		}
-		if (props.category === "pension") {
+		if (props.category === "Pension") {
 			return (
 				<img
 					className="logo icon-color-income"
@@ -112,7 +112,7 @@ const TransactionItem = (props) => {
 				/>
 			);
 		}
-		if (props.category === "gifts") {
+		if (props.category === "Gifts") {
 			return (
 				<img
 					className="logo icon-color-income"
@@ -121,7 +121,7 @@ const TransactionItem = (props) => {
 				/>
 			);
 		}
-		if (props.category === "others-inc") {
+		if (props.category === "Other Income") {
 			return (
 				<img
 					className="logo icon-color-income"
