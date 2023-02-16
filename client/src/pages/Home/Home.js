@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { apiBaseUrl } from "../../api";
-import Avatar from "../../components/Avatar/Avatar";
 import Card from "../../components/Card/Card";
 import NavBar from "../../components/NavBar/NavBar";
 import "./Home.css";
