@@ -143,6 +143,7 @@ const AllTransactions = ({ token }) => {
 			<div className="search-row">
 				<h2>All Transactions</h2>
 				<input
+					className="input-form__searchbar"
 					id="search-input"
 					onChange={filterByName}
 					type="text"

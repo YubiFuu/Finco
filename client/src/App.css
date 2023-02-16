@@ -8,6 +8,7 @@
 	padding: 10px 80px;
 	border-radius: 20px;
 	border: none;
+	width: 100%;
 	background: linear-gradient(
 		to bottom,
 		rgb(66, 166, 252),
@@ -33,7 +34,7 @@
 }
 .input-form__searchbar {
 	padding: 10px 10px;
-	width: 90%;
+	width: 30%;
 	border-radius: 20px;
 	border: 1px solid gray;
 }
@@ -83,4 +84,8 @@
 	width: 55px;
 	border-radius: 70px;
 	object-fit: cover;
+}
+
+.required {
+	border: 2px solid red;
 }
