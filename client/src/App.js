@@ -62,16 +62,19 @@ function App() {
 						path="/login"
 						element={<LogIn setToken={setToken} />}
 					/>
-					{/* <Route
+					<Route
 						path="/logout"
 						element={<LogOut setToken={setToken} />}
-					/> */}
+					/>
 					<Route path="/register" element={<SignUp />} />
 					<Route
 						path="/forgot-password"
 						element={<ForgotPassword />}
 					/>
-					<Route path="/reset-password" element={<ResetPassword />} />
+					<Route
+						path="/reset-password/:resetPwdToken"
+						element={<ResetPassword />}
+					/>
 					<Route
 						path="/"
 						element={
@@ -116,10 +119,7 @@ function App() {
 						path="/account"
 						element={
 							<Protected token={token} setToken={setToken}>
-								<AccountPage
-									token={token}
-									setToken={setToken}
-								/>
+								<AccountPage token={token} />
 							</Protected>
 						}
 					/>
