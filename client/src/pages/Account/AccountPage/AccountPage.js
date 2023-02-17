@@ -44,7 +44,7 @@ const AccountPage = ({ token, setToken }) => {
 
 	return (
 		<div className="account-page">
-			<div className="display-flex__between">
+			<div className="display-flex__between header">
 				<div>
 					<p>Welcome back,</p>
 					<h2>
@@ -120,23 +120,23 @@ const AccountPage = ({ token, setToken }) => {
 					/>
 				</div>
 			</div>
-			<Link to="/logout">
-				<div className="outer-wrapper__small" onClick={logout}>
-					<div className="wrapper-left">
-						<img
-							className="icon-color-account"
-							src="/images/logout-icon.svg"
-							alt="wallet-icon"
-						/>
-						<h2>Logout</h2>
-					</div>
+
+			<div className="outer-wrapper__small" onClick={logout}>
+				<div className="wrapper-left">
 					<img
-						className="icon-color-account back-button"
-						src="/images/arrow-forward-icon.svg"
-						alt="arrow-forward"
+						className="icon-color-account"
+						src="/images/logout-icon.svg"
+						alt="wallet-icon"
 					/>
+					<h2>Logout</h2>
 				</div>
-			</Link>
+				<img
+					className="icon-color-account back-button"
+					src="/images/arrow-forward-icon.svg"
+					alt="arrow-forward"
+				/>
+			</div>
+
 			<NavBar />
 		</div>
 	);

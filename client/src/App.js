@@ -119,7 +119,10 @@ function App() {
 						path="/account"
 						element={
 							<Protected token={token} setToken={setToken}>
-								<AccountPage token={token} />
+								<AccountPage
+									token={token}
+									setToken={setToken}
+								/>
 							</Protected>
 						}
 					/>

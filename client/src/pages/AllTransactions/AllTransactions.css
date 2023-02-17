@@ -1,52 +1,53 @@
 .all-transactions .search-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 .all-transactions .search-row input {
-    width: 50px;
-    aspect-ratio: 1/1;
-    padding: 0;
-    font-size: 1.7rem;
-    display: flex;
-    justify-content: center;
-    cursor: pointer;
-    z-index: 2;
+	width: 50px;
+	aspect-ratio: 1/1;
+	padding: 0;
+	font-size: 1.7rem;
+	display: flex;
+	justify-content: center;
+	cursor: pointer;
+	z-index: 2;
 }
 .all-transactions .total-inc-exp-wrapper {
-    gap: 20px;
+	gap: 15px;
+	margin-bottom: 5px;
 }
 
 .income-img:hover,
 .expense-img:hover {
-    cursor: pointer;
-    user-select: none;
-    background-color: rgb(230, 230, 230);
+	cursor: pointer;
+	user-select: none;
+	background-color: rgb(230, 230, 230);
 }
 
 input[type="date"]::-webkit-inner-spin-button,
 input[type="date"]::-webkit-calendar-picker-indicator {
-    margin: 0;
-    cursor: pointer;
+	margin: 0;
+	cursor: pointer;
 }
 input[type="date"]::-webkit-datetime-edit {
-    display: none;
+	display: none;
 }
 
 input#search-input {
-    background-image: url("../../../public/images/Search.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    text-indent: 20px;
-    caret-color: transparent;
+	background-image: url("../../../public/images/Search.svg");
+	background-repeat: no-repeat;
+	background-position: center;
+	text-indent: 20px;
+	caret-color: transparent;
 }
 .all-transactions .search-row input#search-input.search-active {
-    width: 100px;
-    height: 50px;
-    background-position-x: 90%;
-    transition-duration: 0.3s;
-    caret-color: black;
+	width: 100px;
+	height: 50px;
+	background-position-x: 90%;
+	transition-duration: 0.3s;
+	caret-color: black;
 }
 .all-transactions > h2 {
-    margin: 30px 0 30px;
+	margin: 30px 0 30px;
 }

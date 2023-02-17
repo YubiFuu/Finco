@@ -19,7 +19,7 @@ const AllTransactions = ({ token }) => {
 	const [toggleFilterExpense, setToggleFilterExpense] = useState(false);
 	const [searchActive, setSearchActive] = useState(false);
 
-	const [searchDate, setSearchDate] = useState(today);
+	const [searchDate, setSearchDate] = useState("");
 
 	console.log("AllTransactions:", token);
 
@@ -92,7 +92,8 @@ const AllTransactions = ({ token }) => {
 	//=========================================================
 
 	// ================= Filter by Date ======================
-	function filterByDate() {
+
+	useEffect(() => {
 		const userInput = searchDate;
 		console.log("Date input:", userInput);
 		let filteredExpenses = [];
@@ -108,7 +109,7 @@ const AllTransactions = ({ token }) => {
 		return filteredExpenses.length !== 0
 			? setFiltered(filteredExpenses)
 			: setFiltered(userTransactions);
-	}
+	}, [searchDate]);
 	//=========================================================
 
 	// ================= Filter by Income ======================
@@ -183,11 +184,10 @@ const AllTransactions = ({ token }) => {
 					<input
 						type="date"
 						id="date-input"
-						value={searchDate}
 						onChange={(e) =>
 							setSearchDate(e.target.value.slice(0, 10))
 						}
-						onClick={filterByDate}
+						// onClick={filterByDate}
 					/>
 				</div>
 				<div className="total-inc-exp-wrapper display-flex__evenly">
