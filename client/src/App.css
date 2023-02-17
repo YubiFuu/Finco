@@ -45,14 +45,10 @@ h2 {
 	font-weight: 700;
 }
 h3.big {
-<<<<<<< HEAD
-	font-size: 2.2rem;
-=======
-    font-size: 2rem;
+	font-size: 2rem;
 }
 h3 {
-    font-size: 1.4rem;
->>>>>>> jess-branch
+	font-size: 1.4rem;
 }
 
 select,
@@ -72,13 +68,8 @@ header {
 }
 
 main {
-<<<<<<< HEAD
-	margin: 0 36px;
+	margin: 0 20px;
 	padding-bottom: 75px;
-=======
-    margin: 0 20px;
-    padding-bottom: 75px;
->>>>>>> jess-branch
 }
 footer {
 	margin-top: auto;
@@ -94,6 +85,8 @@ footer a {
 
 .error-message {
 	color: red;
+	text-align: center;
+	margin: 10px;
 }
 
 .blue-button {

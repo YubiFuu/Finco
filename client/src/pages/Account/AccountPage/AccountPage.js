@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { apiBaseUrl } from "../../../api";
 import Avatar from "../../../components/Avatar/Avatar";
 import NavBar from "../../../components/NavBar/NavBar";
 import "./AccountPage.css";
 
-const AccountPage = ({ token }) => {
+const AccountPage = ({ token, setToken }) => {
 	const [profile, setProfile] = useState([]);
 	const [errorMessage, setErrorMessage] = useState([]);
+	const navigate = useNavigate();
 
 	useEffect(() => {
 		fetch(`${apiBaseUrl}/users/profile`, {
@@ -26,6 +27,20 @@ const AccountPage = ({ token }) => {
 				}
 			});
 	}, [token]);
+
+	function logout(event) {
+		event.preventDefault();
+
+		fetch(`${apiBaseUrl}/users/logout`, {
+			method: "POST",
+			credentials: "include",
+		})
+			.then((res) => res.json())
+			.then(() => {
+				setToken(null);
+				navigate("/login"); // LogoutPage will delete Token and navigate to /login
+			});
+	}
 
 	return (
 		<div className="account-page">
@@ -106,7 +121,7 @@ const AccountPage = ({ token }) => {
 				</div>
 			</div>
 			<Link to="/logout">
-				<div className="outer-wrapper__small">
+				<div className="outer-wrapper__small" onClick={logout}>
 					<div className="wrapper-left">
 						<img
 							className="icon-color-account"
