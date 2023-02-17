@@ -48,14 +48,10 @@ h2 {
 }
 
 h3.big {
-<<<<<<< HEAD
-	font-size: 2.2rem;
-=======
     font-size: 2rem;
 }
 h3 {
     font-size: 1.4rem;
->>>>>>> jess-branch
 }
 
 select,
@@ -66,7 +62,7 @@ input:not([type="checkbox"]) {
     font-family: "Urbanist";
     color: #0d1636;
     margin-bottom: 16px;
-    width: 98%;
+    width: 100%;
 }
 
 header {
@@ -75,13 +71,8 @@ header {
 }
 
 main {
-<<<<<<< HEAD
-	margin: 0 36px;
-	padding-bottom: 75px;
-=======
-    margin: 0 20px;
+    margin: 0 36px;
     padding-bottom: 75px;
->>>>>>> jess-branch
 }
 footer {
     margin-top: auto;
@@ -96,7 +87,7 @@ footer a {
 }
 
 .error-message {
-	color: red;
+    color: red;
 }
 
 .blue-button {
