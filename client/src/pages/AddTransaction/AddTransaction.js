@@ -93,7 +93,11 @@ const AddTransaction = ({ token }) => {
                 <form>
                     <div className="select-wrapper">
                         <select
-                            className="input-form"
+                            className={
+                                transactionType === "income"
+                                    ? "input-form transaction-income"
+                                    : "input-form transaction-expense"
+                            }
                             name="transaction-type"
                             id="transaction-type"
                             value={transactionType}

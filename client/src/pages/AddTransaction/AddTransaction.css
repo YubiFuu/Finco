@@ -18,3 +18,20 @@ select {
     position: absolute;
     pointer-events: none;
 }
+option {
+    padding-top: 20px;
+}
+.transaction-income {
+    font-size: 2.2rem;
+    font-weight: 500s;
+    background: linear-gradient(to bottom, #44bbfe, #1e78fe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.transaction-expense {
+    font-size: 2.2rem;
+    font-weight: 500s;
+    background: linear-gradient(to bottom, #ffcf53, #ff9900);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
