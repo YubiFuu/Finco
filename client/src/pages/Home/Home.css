@@ -13,7 +13,7 @@
     background-color: #f7f7f7;
     border-radius: 10px;
     flex-grow: 1;
-    padding: 30px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     gap: 150px;
@@ -23,5 +23,10 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    gap: 5px;
+}
+.wallet .round div {
+    display: flex;
+    flex-direction: column;
     gap: 5px;
 }

@@ -17,7 +17,6 @@ const AddTransaction = ({ token }) => {
     const [typeTransaction, setTypeTransaction] = useState("income");
     const [category, setCategory] = useState("");
     const [dateAt, setDateAt] = useState(today);
-    const [searchActive, setSearchActive] = useState(false);
 
     const [isCategoryValid, setIsCategoryValid] = useState(false);
 
@@ -90,93 +89,109 @@ const AddTransaction = ({ token }) => {
             <header className="display-flex__between">
                 <ButtonBack /> <Avatar token={token} />
             </header>
-            <form>
-                <select
-                    className="input-form"
-                    name="transaction-type"
-                    id="transaction-type"
-                    value={transactionType}
-                    onChange={handleTransactionTypeChange}
-                >
-                    <option value="income">Add income</option>
-                    <option value="expense">Add expense</option>
-                </select>
-                <Card token={token} />
-                <div className="display-flex__centered direction-column">
-                    <InputNumberField
-                        onChange={(e) => setValue(e.target.value)}
-                        onSetValue={setAmount}
-                    />
-                    <label htmlFor="category">Category</label>
-
-                    {transactionType === "income" ? (
-                        <select
-                            className={
-                                isCategoryValid
-                                    ? "input-form"
-                                    : "required input-form"
-                            }
-                            id="category"
-                            onChange={(e) => setCategory(e.target.value)}
-                            onClick={() => setIsCategoryValid(true)}
-                        >
-                            <option value="" disabled selected hidden required>
-                                Choose Option
-                            </option>
-                            <option value="Salary">Salary</option>
-                            <option value="Passive Income">
-                                Passive Income
-                            </option>
-                            <option value="Pension">Pension</option>
-                            <option value="Gifts">Gifts</option>
-                            <option value="Other Income">Other Income</option>
-                        </select>
-                    ) : (
-                        <select
-                            className={
-                                isCategoryValid
-                                    ? "input-form"
-                                    : "required input-form"
-                            }
-                            id="category"
-                            onChange={(e) => setCategory(e.target.value)}
-                            onClick={() => setIsCategoryValid(true)}
-                        >
-                            <option value="" disabled selected hidden required>
-                                Choose Option
-                            </option>
-                            <option value="Food&Drink">Food&Drink</option>
-                            <option value="Rent">Rent</option>
-                            <option value="Shopping">Shopping</option>
-                            <option value="Insurance">Insurance</option>
-                            <option value="Taxes">Taxes</option>
-                            <option value="Transportation">
-                                Transportation
-                            </option>
-                            <option value="Personal">Personal</option>
-                            <option value="Healthcare">Healthcare</option>
-                            <option value="Other Expenses">
-                                Other-Expenses
-                            </option>
-                        </select>
-                    )}
-
-                    <input
+            <main>
+                <form>
+                    <select
                         className="input-form"
-                        type="datetime-local"
-                        onChange={(e) => setDateAt(e.target.value)}
-                        value={dateAt}
-                        min={dateNow()}
-                    />
-                </div>
-                <Button
-                    function={addTransaction}
-                    buttonName={"Add Transaction"}
-                    /*buttonName={`Add ${
+                        name="transaction-type"
+                        id="transaction-type"
+                        value={transactionType}
+                        onChange={handleTransactionTypeChange}
+                    >
+                        <option value="income">Add income</option>
+                        <option value="expense">Add expense</option>
+                    </select>
+                    <Card token={token} />
+                    <div className="display-flex__centered direction-column">
+                        <InputNumberField
+                            onChange={(e) => setValue(e.target.value)}
+                            onSetValue={setAmount}
+                        />
+                        <label htmlFor="category">Category</label>
+
+                        {transactionType === "income" ? (
+                            <select
+                                className={
+                                    isCategoryValid
+                                        ? "input-form"
+                                        : "required input-form"
+                                }
+                                id="category"
+                                onChange={(e) => setCategory(e.target.value)}
+                                onClick={() => setIsCategoryValid(true)}
+                            >
+                                <option
+                                    value=""
+                                    disabled
+                                    selected
+                                    hidden
+                                    required
+                                >
+                                    Choose Option
+                                </option>
+                                <option value="Salary">Salary</option>
+                                <option value="Passive Income">
+                                    Passive Income
+                                </option>
+                                <option value="Pension">Pension</option>
+                                <option value="Gifts">Gifts</option>
+                                <option value="Other Income">
+                                    Other Income
+                                </option>
+                            </select>
+                        ) : (
+                            <select
+                                className={
+                                    isCategoryValid
+                                        ? "input-form"
+                                        : "required input-form"
+                                }
+                                id="category"
+                                onChange={(e) => setCategory(e.target.value)}
+                                onClick={() => setIsCategoryValid(true)}
+                            >
+                                <option
+                                    value=""
+                                    disabled
+                                    selected
+                                    hidden
+                                    required
+                                >
+                                    Choose Option
+                                </option>
+                                <option value="Food&Drink">Food&Drink</option>
+                                <option value="Rent">Rent</option>
+                                <option value="Shopping">Shopping</option>
+                                <option value="Insurance">Insurance</option>
+                                <option value="Taxes">Taxes</option>
+                                <option value="Transportation">
+                                    Transportation
+                                </option>
+                                <option value="Personal">Personal</option>
+                                <option value="Healthcare">Healthcare</option>
+                                <option value="Other Expenses">
+                                    Other-Expenses
+                                </option>
+                            </select>
+                        )}
+
+                        <input
+                            className="input-form"
+                            type="datetime-local"
+                            onChange={(e) => setDateAt(e.target.value)}
+                            value={dateAt}
+                            min={dateNow()}
+                        />
+                    </div>
+                    <Button
+                        function={addTransaction}
+                        buttonName={"Add Transaction"}
+                        /*buttonName={`Add ${
 						document.getElementById("transaction-type").value
 					}`}*/
-                />
-            </form>
+                    />
+                </form>
+            </main>
         </div>
     );
 };

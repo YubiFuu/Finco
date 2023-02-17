@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import { apiBaseUrl } from "../../api";
+import "./Home.css";
 import Card from "../../components/Card/Card";
 import NavBar from "../../components/NavBar/NavBar";
 import Avatar from "../../components/Avatar/Avatar";
 
-const Home = ({ token }) => {
+const Home = ({ token, setIsFromSignUp }) => {
     const [profile, setProfile] = useState([]);
     const [errorMessage, setErrorMessage] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         fetch(`${apiBaseUrl}/users/profile`, {
@@ -20,6 +22,7 @@ const Home = ({ token }) => {
             .then(({ status, result, error }) => {
                 if (status === "ok") {
                     setProfile(result);
+                    setLoading(false);
                 } else {
                     setErrorMessage(error.message);
                 }
@@ -29,6 +32,13 @@ const Home = ({ token }) => {
     function setDotAfter3Digits(money) {
         return money?.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.");
     }
+    if (loading === true) {
+        return <div className="is-loading"></div>;
+    }
+    function notSignUp() {
+        setIsFromSignUp(false);
+    }
+    notSignUp();
     return (
         <div className="home">
             <NavBar />{" "}

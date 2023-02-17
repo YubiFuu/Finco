@@ -1,0 +1,25 @@
+.edit-profile main p {
+    margin: 36px 0 20px;
+}
+
+#edit-image {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 20px;
+}
+input[type="file"] {
+    transform: translateY(-30px);
+    margin-left: 10px;
+    width: 60px;
+    color: transparent;
+    aspect-ratio: 1/1;
+    background-image: url("../../../../public/images/cameraIcon.svg"),
+        linear-gradient(to bottom, #ffcf53, #ff9900);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+input::-webkit-file-upload-button {
+    display: none;
+}
