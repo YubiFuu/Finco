@@ -4,7 +4,7 @@ import { makeFormData } from "./formData";
 import "./EditProfile.css";
 import Button from "../../../components/Button/Button";
 import { useNavigate } from "react-router-dom";
-const EditProfile = ({ token, isFromSignUp, setIsFromSignUp }) => {
+const EditProfile = ({ token, isFromSignUp }) => {
     const [cardNumber, setCardNumber] = useState("");
     const [monthlyLimit, setMonthlyLimit] = useState("");
     const [profilePicturePreview, setProfilePicturePreview] = useState("");
@@ -64,12 +64,11 @@ const EditProfile = ({ token, isFromSignUp, setIsFromSignUp }) => {
             .then(({ status, result, error }) => {
                 if (status === "ok") {
                     console.log(result);
+                    return navigate("/");
                 } else {
                     console.log(error);
                     setErrorMessage("Error editing profile, try again later");
                 }
-                setIsFromSignUp(false);
-                return navigate("/");
             })
             .catch((error) => {
                 console.log(error);
@@ -87,28 +86,37 @@ const EditProfile = ({ token, isFromSignUp, setIsFromSignUp }) => {
                 />
                 <div></div>
             </header>
-            <h1>{isFromSignUp ? "Set up" : "Edit"} your account</h1>
-            <p>Profile picture</p>
-            <img src={profilePicturePreview} alt="profile-picture" />
-            <input
-                type="file"
-                onChange={(e) => setProfilePicture(e.target.files[0])}
-            />
-            <div>📸</div>
-            <input
-                type="text"
-                placeholder="Card number"
-                onChange={(e) => setCardNumber(e.target.value)}
-            />
-            <div>
-                <div>⚠</div>
+            <main>
+                <h1>{isFromSignUp ? "Set up" : "Edit"} your account</h1>
+                <p>Profile picture</p>
+                <img
+                    id="edit-image"
+                    src={profilePicturePreview}
+                    alt="profile-picture"
+                />
+                <input
+                    type="file"
+                    onChange={(e) => setProfilePicture(e.target.files[0])}
+                />
                 <input
                     type="text"
-                    placeholder="Monthly Limit"
-                    onChange={(e) => setMonthlyLimit(Number(e.target.value))}
+                    placeholder="Card number"
+                    onChange={(e) => setCardNumber(e.target.value)}
                 />
-            </div>
-            <Button buttonName={"Save Changes"} function={editProfile}></Button>
+                <div>
+                    <input
+                        type="text"
+                        placeholder="Monthly Limit"
+                        onChange={(e) =>
+                            setMonthlyLimit(Number(e.target.value))
+                        }
+                    />
+                </div>
+                <Button
+                    buttonName={"Save Changes"}
+                    function={editProfile}
+                ></Button>
+            </main>
         </div>
     );
 };

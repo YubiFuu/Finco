@@ -1,6 +1,9 @@
+.transaction-item {
+    margin-bottom: 10px;
+}
 .transaction-item .middle-part {
-	flex-grow: 1;
-	flex-direction: column;
-	align-items: flex-start;
-	padding-left: 40px;
+    flex-grow: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 40px;
 }

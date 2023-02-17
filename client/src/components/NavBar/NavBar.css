@@ -28,4 +28,16 @@ nav ul li {
 .active .is-active {
     display: block;
     color: #0d1636;
+    position: relative;
+    font-weight: bold;
+}
+.active .is-active:before {
+    content: "";
+    position: absolute;
+    width: 20%;
+    height: 1px;
+    bottom: 0;
+    left: 40%;
+    top: 18px;
+    border-bottom: 2px solid #44bbfe;
 }
