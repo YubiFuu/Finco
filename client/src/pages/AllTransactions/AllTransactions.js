@@ -140,7 +140,6 @@ const AllTransactions = ({ token }) => {
 				searchActive === true ? setSearchActive(false) : null
 			}
 		>
-			<NavBar />
 			<header className="display-flex__between">
 				<img
 					className="logo"
@@ -205,6 +204,7 @@ const AllTransactions = ({ token }) => {
 					);
 				})}
 			</div>
+			<NavBar />
 		</div>
 	);
 };

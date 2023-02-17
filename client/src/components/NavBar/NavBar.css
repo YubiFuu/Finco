@@ -1,31 +1,32 @@
 nav {
-    position: fixed;
-    bottom: 0;
-    width: 375px;
-    background-color: white;
+	position: fixed;
+	bottom: 0;
+	width: 375px;
+	background-color: white;
+	z-index: 100;
 }
 nav ul {
-    display: grid;
-    align-items: center;
-    list-style: none;
-    grid-template-columns: repeat(4, 1fr);
+	display: grid;
+	align-items: center;
+	list-style: none;
+	grid-template-columns: repeat(4, 1fr);
 }
 nav ul li {
-    text-align: center;
-    padding: 10px 0;
+	text-align: center;
+	padding: 10px 0;
 }
 .icons-nav {
-    height: 40px;
+	height: 40px;
 }
 .active svg {
-    display: none;
+	display: none;
 }
 
 .is-active {
-    display: none;
+	display: none;
 }
 
 .active .is-active {
-    display: block;
-    color: #0d1636;
+	display: block;
+	color: #0d1636;
 }

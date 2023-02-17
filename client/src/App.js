@@ -9,6 +9,7 @@ import EditProfile from "./pages/Account/EditProfile/EditProfile";
 import ForgotPassword from "./pages/Account/ForgotPassword/ForgotPassword";
 import LogIn from "./pages/Account/LogIn/LogIn";
 import LogOut from "./pages/Account/LogOut/LogOut";
+import ResetPassword from "./pages/Account/ResetPassword/ResetPassword";
 import SignUp from "./pages/Account/SignUp/SignUp";
 import AddTransaction from "./pages/AddTransaction/AddTransaction";
 import AllTransactions from "./pages/AllTransactions/AllTransactions";
@@ -71,7 +72,11 @@ function App() {
 					/>
 					<Route
 						path="/forgot-password"
-						element={<ForgotPassword />}
+						element={<ForgotPassword token={token} />}
+					/>
+					<Route
+						path="/reset-password"
+						element={<ResetPassword token={token} />}
 					/>
 					<Route
 						path="/"

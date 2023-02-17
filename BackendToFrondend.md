@@ -18,9 +18,9 @@ GET Routes:
     req: firstName, lastName, email, password
 -   "/new-transaction"
     req: amount, typeTransaction, category, dateAt, timeAt
--   "forgot-password"
+-   "/forgot-password"
     req: email
--   "reset-password"
+-   "/reset-password"
     req: password
 
 PUT:

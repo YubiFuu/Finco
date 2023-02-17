@@ -137,7 +137,9 @@ const ReportPage = ({ token }) => {
 				/>
 				<Avatar token={token} />
 			</header>
-			<div className="search-row">
+
+			<img className="chart" src="/images/chart.jpg" alt="Chart-image" />
+			{/* <div className="search-row">
 				<h2>Report</h2>
 				<input
 					id="search-input"
@@ -146,7 +148,7 @@ const ReportPage = ({ token }) => {
 					placeholder="🔍"
 				/>
 				<input type="date" />
-			</div>
+			</div> */}
 			<div className="total-inc-exp-wrapper display-flex__evenly">
 				<div className="round grey">
 					<img
