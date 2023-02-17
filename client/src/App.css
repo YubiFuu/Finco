@@ -62,7 +62,7 @@ input:not([type="checkbox"]) {
 	font-family: "Urbanist";
 	color: #0d1636;
 	margin-bottom: 16px;
-	width: 98%;
+	width: 100%;
 }
 
 header {

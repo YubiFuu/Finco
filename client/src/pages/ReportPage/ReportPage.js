@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { apiBaseUrl } from "../../api";
 import Avatar from "../../components/Avatar/Avatar";
+import ReportChart from "../../components/Chart/ReportChart";
 import NavBar from "../../components/NavBar/NavBar";
 import TransactionItem from "../../components/TransactionItem/TransactionItem";
 import "./ReportPage.css";
@@ -16,8 +17,6 @@ const ReportPage = ({ token }) => {
 	const [filtered, setFiltered] = useState([]);
 	const [toggleFilterIncome, setToggleFilterIncome] = useState(false);
 	const [toggleFilterExpense, setToggleFilterExpense] = useState(false);
-
-	console.log("AllTransactions:", token);
 
 	//==================== Fetch Transactions =======================
 
@@ -35,7 +34,6 @@ const ReportPage = ({ token }) => {
 				setUserTransactions(response.result.transaction);
 				setFiltered(response.result.transaction);
 				setIsLoading(false);
-				console.log("Response:", response);
 			});
 	}, [token]);
 
@@ -64,25 +62,6 @@ const ReportPage = ({ token }) => {
 		return money?.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.");
 	}
 
-	// ================= Filter by Input ======================
-	function filterByName() {
-		const userInput = document.getElementById("search-input");
-		console.log("search input:", userInput.value);
-		let filteredExpenses = [];
-
-		userTransactions.map((exp) => {
-			if (exp.category.includes(userInput.value.toString())) {
-				filteredExpenses.push(exp);
-			}
-		});
-		console.log("FILTERED:", filteredExpenses);
-
-		return filteredExpenses.length !== 0
-			? setFiltered(filteredExpenses)
-			: setFiltered(userTransactions);
-	}
-	//=========================================================
-
 	// ================= Filter by Income ======================
 	function filterByIncome() {
 		setToggleFilterExpense(false);
@@ -96,9 +75,6 @@ const ReportPage = ({ token }) => {
 				filteredExpenses.push(exp);
 			}
 		});
-		console.log("FILTERED:", filteredExpenses);
-		console.log("Income:", toggleFilterIncome);
-		console.log("Expense:", toggleFilterExpense);
 		return toggleFilterIncome
 			? setFiltered(filteredExpenses)
 			: setFiltered(userTransactions);
@@ -118,9 +94,7 @@ const ReportPage = ({ token }) => {
 				filteredExpenses2.push(exp);
 			}
 		});
-		console.log("FILTERED:", filteredExpenses2);
-		console.log("Income:", toggleFilterIncome);
-		console.log("Expense:", toggleFilterExpense);
+
 		return toggleFilterExpense
 			? setFiltered(filteredExpenses2)
 			: setFiltered(userTransactions);
@@ -137,62 +111,54 @@ const ReportPage = ({ token }) => {
 				/>
 				<Avatar token={token} />
 			</header>
+			<main>
+				<ReportChart token={token} />
 
-			<img className="chart" src="/images/chart.jpg" alt="Chart-image" />
-			{/* <div className="search-row">
-				<h2>Report</h2>
-				<input
-					id="search-input"
-					onChange={filterByName}
-					type="text"
-					placeholder="🔍"
-				/>
-				<input type="date" />
-			</div> */}
-			<div className="total-inc-exp-wrapper display-flex__evenly">
-				<div className="round grey">
-					<img
-						onClick={filterByIncome}
-						className="income-img icons-big"
-						src="/images/Income.svg"
-						alt="INCOME-PIC"
-					/>
-					<div>
-						<p>Income</p>
-						<h3>{`+ $${setDotAfter3Digits(
-							profile?.totalAmount?.totalIncome
-						)}`}</h3>
-					</div>
-				</div>
-				<div className="round grey">
-					<img
-						onClick={filterByExpense}
-						className="expense-img icons-big"
-						src="/images/Expense.svg"
-						alt="EXPENSE-PIC"
-					/>
-					<div>
-						<p>Expense</p>
-						<h3>{`- $${setDotAfter3Digits(
-							profile?.totalAmount?.totalExpense
-						)}`}</h3>
-					</div>
-				</div>
-			</div>
-			<h3>Recent Transactions</h3>
-			<div>
-				{filtered.map((e, index) => {
-					return (
-						<TransactionItem
-							key={index}
-							category={e.category}
-							dateAt={e.dateAt}
-							amount={e.amount}
-							typeTransaction={e.typeTransaction}
+				<div className="total-inc-exp-wrapper display-flex__evenly">
+					<div className="round grey">
+						<img
+							onClick={filterByIncome}
+							className="income-img icons-big"
+							src="/images/Income.svg"
+							alt="INCOME-PIC"
 						/>
-					);
-				})}
-			</div>
+						<div>
+							<p>Income</p>
+							<h3>{`+ $${setDotAfter3Digits(
+								profile?.totalAmount?.totalIncome
+							)}`}</h3>
+						</div>
+					</div>
+					<div className="round grey">
+						<img
+							onClick={filterByExpense}
+							className="expense-img icons-big"
+							src="/images/Expense.svg"
+							alt="EXPENSE-PIC"
+						/>
+						<div>
+							<p>Expense</p>
+							<h3>{`- $${setDotAfter3Digits(
+								profile?.totalAmount?.totalExpense
+							)}`}</h3>
+						</div>
+					</div>
+				</div>
+				<h2>Recent Transactions</h2>
+				<div>
+					{filtered.map((e, index) => {
+						return (
+							<TransactionItem
+								key={index}
+								category={e.category}
+								dateAt={e.dateAt}
+								amount={e.amount}
+								typeTransaction={e.typeTransaction}
+							/>
+						);
+					})}
+				</div>
+			</main>
 		</div>
 	);
 };
