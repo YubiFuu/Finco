@@ -14,6 +14,7 @@ html {
 }
 body {
     min-height: 100vh;
+    font-family: "Urbanist";
 }
 .body-column {
     display: flex;
@@ -39,11 +40,13 @@ p.small {
 h1 {
     font-size: 2.8rem;
     color: #0d1636;
+    margin-bottom: 20px;
 }
 h2 {
     font-size: 1.8rem;
     font-weight: 700;
 }
+
 h3.big {
     font-size: 2rem;
 }
