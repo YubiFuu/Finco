@@ -11,7 +11,7 @@ const Protected = ({ token, setToken, children }) => {
             return;
         }
 
-        fetch(`${apiBaseUrl}/users/refresh-token`, {
+        fetch(`${apiBaseUrl}/api/v1/users/refresh-token`, {
             method: "POST",
             credentials: "include",
         })

@@ -19,7 +19,7 @@ const SignUp = ({ setIsFromSignUp }) => {
     function register(event) {
         event.preventDefault(); // page reload verhindern!
 
-        fetch(`${apiBaseUrl}/users/register`, {
+        fetch(`${apiBaseUrl}/api/v1/users/register`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

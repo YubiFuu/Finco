@@ -18,7 +18,7 @@ const ForgotPassword = ({ token }) => {
             return <p>Check Email!</p>;
         }
 
-        fetch(`${apiBaseUrl}/users/forgot-password`, {
+        fetch(`${apiBaseUrl}/api/v1/users/forgot-password`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

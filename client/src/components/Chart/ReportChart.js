@@ -39,7 +39,7 @@ const ReportChart = ({ token }) => {
     });
 
     useEffect(() => {
-        fetch(`${apiBaseUrl}/users/all-transactions`, {
+        fetch(`${apiBaseUrl}/api/v1/users/all-transactions`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",

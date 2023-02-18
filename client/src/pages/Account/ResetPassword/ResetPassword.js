@@ -22,7 +22,7 @@ const ResetPassword = () => {
             return;
         }
 
-        fetch(`${apiBaseUrl}/users/reset-password`, {
+        fetch(`${apiBaseUrl}/api/v1/users/reset-password`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

@@ -14,7 +14,7 @@ const LogIn = ({ setToken }) => {
     function login(event) {
         event.preventDefault();
 
-        fetch(`${apiBaseUrl}/users/login`, {
+        fetch(`${apiBaseUrl}/api/v1/users/login`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
