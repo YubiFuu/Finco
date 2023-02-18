@@ -5,7 +5,7 @@ import "./Avatar.css";
 const Avatar = ({ token }) => {
     const [profile, setProfile] = useState([]);
     const [errorMessage, setErrorMessage] = useState("");
-    const imgPath = "http://localhost:9001/api/v1/img/";
+    const imgPath = `${apiBaseUrl}/api/v1/img/`;
     useEffect(() => {
         fetch(`${apiBaseUrl}/api/v1/users/profile`, {
             method: "GET",
