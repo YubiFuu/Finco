@@ -66,7 +66,7 @@ input:not([type="checkbox"]) {
 }
 
 header {
-	height: 100px;
+	height: 80px;
 	margin: 20px 26px 0 26px;
 }
 
@@ -88,6 +88,7 @@ footer a {
 
 .error-message {
 	color: red;
+	text-align: center;
 }
 
 .blue-button {
@@ -101,6 +102,7 @@ footer a {
 	font-size: 1.8rem;
 	background: linear-gradient(to bottom, #44bbfe, #1e78fe);
 	color: white;
+	margin-bottom: 10px;
 }
 
 .blue-button:hover {
@@ -176,6 +178,10 @@ footer a {
 }
 .grey {
 	background-color: #f7f7f7;
+}
+
+.box-shadow {
+	box-shadow: 2px 1px 4px rgb(181, 179, 179), -2px 1px 4px rgb(181, 179, 179);
 }
 
 .div-centered {

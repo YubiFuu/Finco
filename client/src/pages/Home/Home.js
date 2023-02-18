@@ -41,7 +41,7 @@ const Home = ({ token, setIsFromSignUp }) => {
 	notSignUp();
 	return (
 		<div className="home">
-			<NavBar />{" "}
+			<NavBar />
 			<header className="display-flex__between">
 				<div>
 					<p>Welcome back.</p>

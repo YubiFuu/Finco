@@ -8,12 +8,14 @@ import AccountPage from "./pages/Account/AccountPage/AccountPage";
 import EditProfile from "./pages/Account/EditProfile/EditProfile";
 import ForgotPassword from "./pages/Account/ForgotPassword/ForgotPassword";
 import LogIn from "./pages/Account/LogIn/LogIn";
-import LogOut from "./pages/Account/LogOut/LogOut";
+// import LogOut from "./pages/Account/LogOut/LogOut";
 import ResetPassword from "./pages/Account/ResetPassword/ResetPassword";
 import SignUp from "./pages/Account/SignUp/SignUp";
 import AddTransaction from "./pages/AddTransaction/AddTransaction";
 import AllTransactions from "./pages/AllTransactions/AllTransactions";
 import Home from "./pages/Home/Home";
+import IntroPage from "./pages/IntroPage/IntroPage";
+import LandingPage from "./pages/LandingPage/LandingPage";
 import ReportPage from "./pages/ReportPage/ReportPage";
 
 function App() {
@@ -60,12 +62,13 @@ function App() {
 				<Routes>
 					<Route
 						path="/login"
-						element={<LogIn setToken={setToken} />}
+						element={<LogIn setToken={setToken} token={token} />}
 					/>
 					<Route
-						path="/logout"
-						element={<LogOut setToken={setToken} />}
+						path="/intro-page"
+						element={<IntroPage token={token} />}
 					/>
+					<Route path="/landing-page" element={<LandingPage />} />
 					<Route path="/register" element={<SignUp />} />
 					<Route
 						path="/forgot-password"

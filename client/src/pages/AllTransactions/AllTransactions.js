@@ -193,7 +193,7 @@ const AllTransactions = ({ token }) => {
 				<div className="total-inc-exp-wrapper display-flex__evenly">
 					<div
 						onClick={filterByIncome}
-						className="income-img round grey"
+						className="income-img round grey box-shadow"
 					>
 						<img
 							className="icons-big"
@@ -209,7 +209,7 @@ const AllTransactions = ({ token }) => {
 					</div>
 					<div
 						onClick={filterByExpense}
-						className="expense-img round grey"
+						className="expense-img round grey box-shadow"
 					>
 						<img
 							className=" icons-big"
