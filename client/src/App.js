@@ -69,7 +69,10 @@ function App() {
 						element={<IntroPage token={token} />}
 					/>
 					<Route path="/landing-page" element={<LandingPage />} />
-					<Route path="/register" element={<SignUp />} />
+					<Route
+						path="/register"
+						element={<SignUp setIsFromSignUp={setIsFromSignUp} />}
+					/>
 					<Route
 						path="/forgot-password"
 						element={<ForgotPassword />}

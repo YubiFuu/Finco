@@ -42,8 +42,9 @@ const SignUp = ({ setIsFromSignUp }) => {
 					return;
 				}
 				setIsFromSignUp(true);
+				navigate("/login");
+				return;
 			});
-		return navigate("/login");
 	}
 
 	return (
@@ -101,7 +102,7 @@ const SignUp = ({ setIsFromSignUp }) => {
 						</p>
 					</div>
 					<Button buttonName={"Register Now"} function={register} />
-					<h2 className="error-message">{errorMessage}</h2>
+					{/* <h3 className="error-message">{errorMessage}</h3> */}
 				</form>
 			</main>
 			<footer>
