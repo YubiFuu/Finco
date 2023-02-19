@@ -65,7 +65,7 @@ const EditProfile = ({ token, isFromSignUp }) => {
 			.then(({ status, result, error }) => {
 				if (status === "ok") {
 					console.log(result);
-					return navigate("/");
+					return navigate("/home");
 				} else {
 					console.log(error);
 					setErrorMessage("Error editing profile, try again later");
@@ -78,7 +78,7 @@ const EditProfile = ({ token, isFromSignUp }) => {
 	};
 
 	function backToDashboard() {
-		navigate("/");
+		navigate("/home");
 	}
 
 	return (

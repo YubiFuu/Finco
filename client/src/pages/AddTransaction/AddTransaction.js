@@ -40,30 +40,31 @@ const AddTransaction = ({ token }) => {
 			setErrorMessage("Check all required fields");
 			return;
 		}
+		if (amount > 0) {
+			fetch(`${apiBaseUrl}/users/new-transaction`, {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+					Authorization: `Bearer ${token}`,
+				},
+				body: JSON.stringify({
+					amount,
+					typeTransaction,
+					category,
+					dateAt,
+				}),
+			})
+				.then((res) => res.json())
+				.then(({ status, error }) => {
+					if (status === "error") {
+						// error handling...
+						setErrorMessage(error.message);
+						return;
+					}
 
-		fetch(`${apiBaseUrl}/users/new-transaction`, {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-				Authorization: `Bearer ${token}`,
-			},
-			body: JSON.stringify({
-				amount,
-				typeTransaction,
-				category,
-				dateAt,
-			}),
-		})
-			.then((res) => res.json())
-			.then(({ status, error }) => {
-				if (status === "error") {
-					// error handling...
-					setErrorMessage(error.message);
-					return;
-				}
-
-				return navigate("/all-transactions");
-			});
+					return navigate("/all-transactions");
+				});
+		}
 	}
 
 	//==================== Date Converter to apply to input datetime-local =======================

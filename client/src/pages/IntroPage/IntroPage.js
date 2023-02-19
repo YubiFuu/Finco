@@ -4,13 +4,13 @@ import "./IntroPage.css";
 
 const IntroPage = ({ token }) => {
 	const navigate = useNavigate();
-	console.log("intro-page:", token);
+	console.log("intro-page-token:", token);
 	useEffect(() => {
 		const timer = setTimeout(() => {
-			if (!token) {
+			if (token === null) {
 				navigate("/landing-page");
 			} else {
-				navigate("/login");
+				navigate("/home");
 			}
 		}, [6000]);
 		return () => clearTimeout(timer);

@@ -54,7 +54,7 @@ const AccountPage = ({ token, setToken }) => {
 				</div>
 				<Avatar token={token} />
 			</div>
-			<Link to="/">
+			<Link to="/home">
 				<div className="outer-wrapper__small">
 					<div className="wrapper-left">
 						<img

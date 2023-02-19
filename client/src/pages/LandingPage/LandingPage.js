@@ -6,7 +6,7 @@ const LandingPage = () => {
 	const navigate = useNavigate();
 
 	function navigateLogin() {
-		navigate("/login");
+		navigate("/home");
 	}
 	return (
 		<div className="landing-page display-flex__centered direction-column">

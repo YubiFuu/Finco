@@ -60,15 +60,12 @@ function App() {
 			<BrowserRouter>
 				{/* <NavBar /> */}
 				<Routes>
+					<Route path="/" element={<IntroPage token={token} />} />
+					<Route path="/landing-page" element={<LandingPage />} />
 					<Route
 						path="/login"
 						element={<LogIn setToken={setToken} token={token} />}
 					/>
-					<Route
-						path="/intro-page"
-						element={<IntroPage token={token} />}
-					/>
-					<Route path="/landing-page" element={<LandingPage />} />
 					<Route
 						path="/register"
 						element={<SignUp setIsFromSignUp={setIsFromSignUp} />}
@@ -82,7 +79,7 @@ function App() {
 						element={<ResetPassword />}
 					/>
 					<Route
-						path="/"
+						path="/home"
 						element={
 							<Protected token={token} setToken={setToken}>
 								<Home

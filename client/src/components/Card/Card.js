@@ -26,7 +26,7 @@ const Card = ({ token }) => {
 	useEffect(() => {
 		async function generateMaskedNumber() {
 			await setLast4Digits(cardNumber?.slice(-4));
-			const firstDigits = await cardNumber?.slice(0, -4);
+			const firstDigits = await cardNumber.slice(0, -4);
 			setMaskedNumber(empty.padStart(firstDigits.length, "*"));
 		}
 		if (cardNumber) {

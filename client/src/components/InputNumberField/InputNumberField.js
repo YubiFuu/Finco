@@ -6,12 +6,14 @@ function NumberInput(props) {
 	const [isAmountValid, setIsAmountValid] = useState(false);
 
 	function handleKeyDown(event) {
-		// Erlaube die Verwendung von Backspace, Pfeil links/rechts und Delete-Tasten
+		// Erlaube die Verwendung von Backspace, Pfeil links/rechts, Delete-Tasten und dem Dezimaltrennzeichen
 		if (
 			event.key === "Backspace" ||
 			event.key === "ArrowLeft" ||
 			event.key === "ArrowRight" ||
-			event.key === "Delete"
+			event.key === "Delete" ||
+			event.key === "," ||
+			event.key === "."
 		) {
 			return;
 		}
@@ -23,24 +25,32 @@ function NumberInput(props) {
 	}
 
 	function handleChange(event) {
-		// Entferne alle Nicht-Zahlen aus dem Eingabewert
-		const value = event.target.value.replace(/[^0-9]/g, "");
+		// Entferne alle Nicht-Zahlen und das Dezimaltrennzeichen aus dem Eingabewert
+		const value = event.target.value
+			.replace(/[^\d,.-]/g, "") // Nur Zahlen, Komma und Minuszeichen erlaubt
+			.replace(",", ".") // Ersetze Komma durch Punkt
+			.replace(/(\..*)\./g, "$1"); // Verhindere das Einfügen von mehr als einem Punkt
 		setValue(value);
-		props.onSetValue(value);
+
+		// Validiere den Wert: Wenn es nur Nullen enthält, ist es ungültig
+		if (/^0+$/.test(value)) {
+			setIsAmountValid(false);
+		} else {
+			setIsAmountValid(true);
+		}
+
+		props.onSetValue(Number(value).toFixed(2).toString());
 	}
 
 	return (
 		<div className="input-number-field display-flex__centered direction-column">
-			<label htmlFor="" name="input-amount">
-				Amount
-			</label>
+			<label htmlFor="input-amount">Amount</label>
 			<input
-				className={isAmountValid ? `input-form` : "required input-form"}
+				className={isAmountValid ? "input-form" : "required input-form"}
 				type="text"
 				value={value}
 				onChange={handleChange}
 				onKeyDown={handleKeyDown}
-				onClick={() => setIsAmountValid(true)}
 				id="input-amount"
 				required
 			/>
