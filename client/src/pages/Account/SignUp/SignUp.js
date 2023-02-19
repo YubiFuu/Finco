@@ -4,7 +4,7 @@ import { apiBaseUrl } from "../../../api";
 import Button from "../../../components/Button/Button";
 import "./SignUp.css";
 
-const SignUp = ({ setIsFromSignUp }) => {
+const SignUp = ({}) => {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
@@ -41,7 +41,6 @@ const SignUp = ({ setIsFromSignUp }) => {
                     setErrorMessage(error.message);
                     return;
                 }
-                setIsFromSignUp(true);
                 return navigate("/edit-profile");
             });
     }

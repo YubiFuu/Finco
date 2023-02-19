@@ -5,7 +5,7 @@ import Card from "../../components/Card/Card";
 import NavBar from "../../components/NavBar/NavBar";
 import "./Home.css";
 
-const Home = ({ token, setIsFromSignUp }) => {
+const Home = ({ token }) => {
     const [profile, setProfile] = useState([]);
     const [errorMessage, setErrorMessage] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -35,10 +35,7 @@ const Home = ({ token, setIsFromSignUp }) => {
     if (loading === true) {
         return <div className="is-loading"></div>;
     }
-    function notSignUp() {
-        setIsFromSignUp(false);
-    }
-    notSignUp();
+
     return (
         <div className="home">
             <NavBar />

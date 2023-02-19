@@ -20,7 +20,6 @@ import ReportPage from "./pages/ReportPage/ReportPage";
 
 function App() {
     const [token, setToken] = useState(null);
-    const [isFromSignUp, setIsFromSignUp] = useState(true);
 
     console.log(Date.now(), token);
     useEffect(() => {
@@ -82,10 +81,7 @@ function App() {
                         path="/"
                         element={
                             <Protected token={token} setToken={setToken}>
-                                <Home
-                                    token={token}
-                                    setIsFromSignUp={setIsFromSignUp}
-                                />
+                                <Home token={token} />
                                 <NavBar />
                             </Protected>
                         }
@@ -93,11 +89,7 @@ function App() {
                     <Route
                         path="/edit-profile"
                         element={
-                            <Protected
-                                token={token}
-                                setToken={setToken}
-                                isFromSignUp={isFromSignUp}
-                            >
+                            <Protected token={token} setToken={setToken}>
                                 <EditProfile token={token} />
                             </Protected>
                         }
