@@ -15,9 +15,15 @@ html {
 body {
 	min-height: 100vh;
 	font-family: "Urbanist";
+	scroll-behavior: smooth;
 }
+
+label {
+	font-size: 1.5rem;
+}
+
 .body-column {
-	display: flex;
+	dispay: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	min-height: 100vh;
@@ -71,8 +77,8 @@ header {
 }
 
 main {
-	margin: 0 20px;
-	padding-bottom: 75px;
+	margin: 0 20px 50px 20px;
+	padding-bottom: 20px;
 }
 footer {
 	margin-top: auto;
@@ -180,9 +186,9 @@ footer a {
 	background-color: #f7f7f7;
 }
 
-.box-shadow {
+/* .box-shadow {
 	box-shadow: 2px 1px 4px rgb(181, 179, 179), -2px 1px 4px rgb(181, 179, 179);
-}
+} */
 
 .div-centered {
 	text-align: center;

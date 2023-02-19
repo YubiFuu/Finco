@@ -14,7 +14,7 @@ const AddTransaction = ({ token }) => {
 	const [value, setValue] = useState("");
 	const [transactionType, setTransactionType] = useState("income");
 	const [amount, setAmount] = useState("");
-	const [typeTransaction, setTypeTransaction] = useState("");
+	const [typeTransaction, setTypeTransaction] = useState("income");
 	const [category, setCategory] = useState("");
 	const [dateAt, setDateAt] = useState(today);
 

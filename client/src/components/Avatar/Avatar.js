@@ -6,6 +6,7 @@ const Avatar = ({ token }) => {
 	const [profile, setProfile] = useState([]);
 	const [errorMessage, setErrorMessage] = useState("");
 	const imgPath = "http://localhost:9001/api/v1/img/";
+	const avatarPlaceholder = "/images/avatar-placeholder.svg";
 	useEffect(() => {
 		fetch(`${apiBaseUrl}/users/profile`, {
 			method: "GET",
@@ -26,14 +27,22 @@ const Avatar = ({ token }) => {
 	}, [token]);
 
 	if (profile.profilePicture === undefined) {
-		return <p>Loading...</p>;
+		return (
+			<Link to="/account">
+				<img
+					className="avatar-pic box-shadow"
+					src={`${avatarPlaceholder}`}
+					alt="Avatar-pic"
+				/>
+			</Link>
+		);
 	}
 	return (
 		<Link to="/account">
 			<img
 				className="avatar-pic box-shadow"
 				src={`${imgPath}${profile.profilePicture}`}
-				alt="😎"
+				alt="Avatar-pic"
 			/>
 		</Link>
 	);
