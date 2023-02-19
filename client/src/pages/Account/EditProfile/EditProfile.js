@@ -4,7 +4,7 @@ import { apiBaseUrl } from "../../../api";
 import Button from "../../../components/Button/Button";
 import "./EditProfile.css";
 import { makeFormData } from "./formData";
-const EditProfile = ({ token, isFromSignUp }) => {
+const EditProfile = ({ token }) => {
     const [cardNumber, setCardNumber] = useState("");
     const [monthlyLimit, setMonthlyLimit] = useState("");
     const [profilePicturePreview, setProfilePicturePreview] = useState("");
@@ -91,7 +91,7 @@ const EditProfile = ({ token, isFromSignUp }) => {
                 <div></div>
             </header>
             <main>
-                <h1>{isFromSignUp ? "Set up" : "Edit"} your account</h1>
+                <h1>Edit your account</h1>
                 <p>Profile picture</p>
                 <img
                     id="edit-image"
