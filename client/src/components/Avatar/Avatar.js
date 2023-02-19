@@ -30,7 +30,7 @@ const Avatar = ({ token }) => {
 		return (
 			<Link to="/account">
 				<img
-					className="avatar-pic box-shadow"
+					className="avatar-pic box-shadow icon-color-account"
 					src={`${avatarPlaceholder}`}
 					alt="Avatar-pic"
 				/>

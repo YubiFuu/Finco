@@ -5,6 +5,7 @@ import Button from "../../../components/Button/Button";
 import "./EditProfile.css";
 import { makeFormData } from "./formData";
 const EditProfile = ({ token, isFromSignUp }) => {
+	const avatarPlaceholder = "/images/avatar-placeholder.svg";
 	const [cardNumber, setCardNumber] = useState("");
 	const [monthlyLimit, setMonthlyLimit] = useState("");
 	const [profilePicturePreview, setProfilePicturePreview] = useState("");
@@ -95,7 +96,7 @@ const EditProfile = ({ token, isFromSignUp }) => {
 				<p>Profile picture</p>
 				<img
 					id="edit-image"
-					src={profilePicturePreview}
+					src={`${profilePicturePreview || avatarPlaceholder}`}
 					alt="profile-picture"
 				/>
 				<input

@@ -42,8 +42,8 @@ const SignUp = ({ setIsFromSignUp }) => {
 					return;
 				}
 				setIsFromSignUp(true);
-				return navigate("/login");
 			});
+		return navigate("/login");
 	}
 
 	return (
