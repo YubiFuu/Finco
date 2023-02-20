@@ -1,10 +1,12 @@
 .landing-page {
 	text-align: center;
 	margin-top: 16vh;
+	height: 50vh;
 }
 .landing-page .button-wrapper {
 	width: 80%;
 	margin-top: 60vh;
+	margin-bottom: 40px;
 }
 .landing-page {
 	position: relative; /* Required for absolute positioning of child elements */
