@@ -1,44 +1,46 @@
 select {
-	-webkit-appearance: none;
-	appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
 }
 .select-wrapper {
-	position: relative;
-	width: 100%;
+    position: relative;
+    width: 100%;
 }
 
 .select-wrapper::after {
-	content: "";
-	background-image: url("../../../public/images/arrowDownIcon.svg");
-	width: 25px;
-	height: 25px;
-	font-size: 1.8rem;
-	top: 19px;
-	right: 17px;
-	position: absolute;
-	pointer-events: none;
+    content: "";
+    background-image: url("../../../public/images/arrowDownIcon.svg");
+    width: 25px;
+    height: 25px;
+    font-size: 1.8rem;
+    top: 19px;
+    right: 17px;
+    position: absolute;
+    pointer-events: none;
 }
 option {
-	padding-top: 20px;
+    padding-top: 20px;
 }
 .transaction-income {
-	font-size: 2.2rem;
-	font-weight: 500s;
-	background: linear-gradient(to bottom, #44bbfe, #1e78fe);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
+    font-size: 2.2rem;
+    font-weight: 500s;
+    background: linear-gradient(to bottom, #44bbfe, #1e78fe);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 .transaction-expense {
-	font-size: 2.2rem;
-	font-weight: 500s;
-	background: linear-gradient(to bottom, #ffcf53, #ff9900);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
+    font-size: 2.2rem;
+    font-weight: 500s;
+    background: linear-gradient(to bottom, #ffcf53, #ff9900);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 .transaction-category {
-	font-size: 2.2rem;
-	font-weight: 500s;
-	/* background: linear-gradient(to bottom, #ffcf53, #ff9900);
+    font-size: 2.2rem;
+    font-weight: 500s;
+    /* background: linear-gradient(to bottom, #ffcf53, #ff9900);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; */
 }
