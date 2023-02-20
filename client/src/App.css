@@ -62,7 +62,9 @@ h3 {
 
 select,
 input:not([type="checkbox"]) {
-    padding: 20px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    padding: 25px;
     border-radius: 50px;
     border: 1px solid #ebebeb;
     font-family: "Urbanist";
