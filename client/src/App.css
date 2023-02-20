@@ -88,6 +88,7 @@ footer {
 footer a {
 	text-decoration: none;
 	background: linear-gradient(to bottom, #44bbfe, #1e78fe);
+	background-clip: text;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }

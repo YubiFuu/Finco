@@ -5,7 +5,6 @@ import Button from "../../../components/Button/Button";
 import "./EditProfile.css";
 import { makeFormData } from "./formData";
 const EditProfile = ({ token, isFromSignUp }) => {
-	const avatarPlaceholder = "/images/avatar-placeholder.svg";
 	const [cardNumber, setCardNumber] = useState("");
 	const [monthlyLimit, setMonthlyLimit] = useState("");
 	const [profilePicturePreview, setProfilePicturePreview] = useState("");
@@ -14,7 +13,7 @@ const EditProfile = ({ token, isFromSignUp }) => {
 	const navigate = useNavigate();
 
 	useEffect(() => {
-		fetch(`${apiBaseUrl}/users/profile`, {
+		fetch(`${apiBaseUrl}/api/v1/users/profile`, {
 			method: "GET",
 			headers: {
 				"Content-Type": "application/json",
@@ -65,7 +64,7 @@ const EditProfile = ({ token, isFromSignUp }) => {
 			.then(({ status, result, error }) => {
 				if (status === "ok") {
 					console.log(result);
-					return navigate("/home");
+					return navigate("/");
 				} else {
 					console.log(error);
 					setErrorMessage("Error editing profile, try again later");
@@ -78,7 +77,7 @@ const EditProfile = ({ token, isFromSignUp }) => {
 	};
 
 	function backToDashboard() {
-		navigate("/home");
+		navigate("/");
 	}
 
 	return (
@@ -96,7 +95,7 @@ const EditProfile = ({ token, isFromSignUp }) => {
 				<p>Profile picture</p>
 				<img
 					id="edit-image"
-					src={`${profilePicturePreview || avatarPlaceholder}`}
+					src={profilePicturePreview}
 					alt="profile-picture"
 				/>
 				<input

@@ -11,7 +11,7 @@ const AccountPage = ({ token, setToken }) => {
 	const navigate = useNavigate();
 
 	useEffect(() => {
-		fetch(`${apiBaseUrl}/users/profile`, {
+		fetch(`${apiBaseUrl}/api/v1/users/profile`, {
 			method: "GET",
 			headers: {
 				"Content-Type": "application/json",
@@ -31,7 +31,7 @@ const AccountPage = ({ token, setToken }) => {
 	function logout(event) {
 		event.preventDefault();
 
-		fetch(`${apiBaseUrl}/users/logout`, {
+		fetch(`${apiBaseUrl}/api/v1/users/logout`, {
 			method: "POST",
 			credentials: "include",
 		})

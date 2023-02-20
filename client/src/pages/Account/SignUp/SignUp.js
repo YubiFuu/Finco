@@ -9,7 +9,6 @@ const SignUp = ({ setIsFromSignUp }) => {
 	const [lastName, setLastName] = useState("");
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
-	const [termsAndService, setTermsAndService] = useState(false);
 	// const [profilePicture, setProfilePicture] = useState(null);
 	// const [bio, setBio] = useState("");
 
@@ -49,8 +48,7 @@ const SignUp = ({ setIsFromSignUp }) => {
 					return;
 				}
 				setIsFromSignUp(true);
-				navigate("/login");
-				return;
+				return navigate("/edit-profile");
 			});
 	}
 

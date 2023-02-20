@@ -20,7 +20,6 @@ import ReportPage from "./pages/ReportPage/ReportPage";
 
 function App() {
 	const [token, setToken] = useState(null);
-	const [isFromSignUp, setIsFromSignUp] = useState(true);
 
 	console.log(Date.now(), token);
 	useEffect(() => {
@@ -42,7 +41,7 @@ function App() {
 		const refreshTokenTimeoutID = setTimeout(() => {
 			console.log("about to do silent refresh");
 
-			fetch(`${apiBaseUrl}/users/refresh-token`, {
+			fetch(`${apiBaseUrl}/api/v1/users/refresh-token`, {
 				method: "POST",
 				credentials: "include",
 			})

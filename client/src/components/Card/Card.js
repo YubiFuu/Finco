@@ -8,7 +8,7 @@ const Card = ({ token }) => {
 	const empty = "";
 
 	useEffect(() => {
-		fetch(`${apiBaseUrl}/users/profile`, {
+		fetch(`${apiBaseUrl}/api/v1/users/profile`, {
 			method: "GET",
 			headers: {
 				"Content-Type": "application/json",
