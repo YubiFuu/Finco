@@ -1,14 +1,13 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { apiBaseUrl } from "../../../api";
 import Button from "../../../components/Button/Button";
 import "./ForgotPassword.css";
 
-const ForgotPassword = ({ token }) => {
+const ForgotPassword = ({}) => {
     const [email, setEmail] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
     const [successMessage, setSuccessMessage] = useState("");
-    const navigate = useNavigate();
 
     function forgotPassword(event) {
         event.preventDefault();
@@ -40,7 +39,7 @@ const ForgotPassword = ({ token }) => {
     }
 
     return (
-        <div className="forgot-pass">
+        <div className="forgot-pass body-column">
             <header className="display-flex__between">
                 <img
                     className="logo"
@@ -50,7 +49,13 @@ const ForgotPassword = ({ token }) => {
                 <div></div>
             </header>
             <main>
-                <h1>Enter your email</h1>
+                <div className="div-centered">
+                    <h1>Forgot password?</h1>
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit. Cupiditate, ad!
+                    </p>
+                </div>
                 <input
                     type="email"
                     placeholder="Email"

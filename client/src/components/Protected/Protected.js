@@ -22,7 +22,7 @@ const Protected = ({ token, setToken, children }) => {
                     setToken(result.accessToken);
                 }
             });
-    }, []);
+    }, [token, setToken]);
 
     if (loading && !token) {
         return <h1>Loading...</h1>;

@@ -10,13 +10,12 @@ import NavBar from "../../components/NavBar/NavBar";
 import "./AddTransaction.css";
 
 const AddTransaction = ({ token }) => {
-	const today = new Date().toISOString().substr(0, 16); //current date-time-stamp
-	const [value, setValue] = useState("");
-	const [transactionType, setTransactionType] = useState("income");
-	const [amount, setAmount] = useState("");
-	const [typeTransaction, setTypeTransaction] = useState("income");
-	const [category, setCategory] = useState("");
-	const [dateAt, setDateAt] = useState(today);
+    const today = new Date().toISOString().substr(0, 16);
+    const [transactionType, setTransactionType] = useState("income");
+    const [amount, setAmount] = useState("");
+    const [typeTransaction, setTypeTransaction] = useState("income");
+    const [category, setCategory] = useState("");
+    const [dateAt, setDateAt] = useState(today);
 
     const [isCategoryValid, setIsCategoryValid] = useState(false);
 
@@ -32,9 +31,8 @@ const AddTransaction = ({ token }) => {
     }
 
     function addTransaction(event) {
-        event.preventDefault(); // page reload verhindern!
+        event.preventDefault();
 
-        // prüfe ob required Eingaben getätigt wurden
         if (!amount || category === "") {
             setIsCategoryValid(false);
             setErrorMessage("Check all required fields");
@@ -111,10 +109,7 @@ const AddTransaction = ({ token }) => {
                     </div>
                     <Card token={token} />
                     <div className="display-flex__centered direction-column">
-                        <InputNumberField
-                            onChange={(e) => setValue(e.target.value)}
-                            onSetValue={setAmount}
-                        />
+                        <InputNumberField onSetValue={setAmount} />
                         <label htmlFor="category">Category</label>
 
                         {transactionType === "income" ? (
@@ -206,9 +201,6 @@ const AddTransaction = ({ token }) => {
                     <Button
                         function={addTransaction}
                         buttonName={"Add Transaction"}
-                        /*buttonName={`Add ${
-                            document.getElementById("transaction-type").value
-                        }`}*/
                     />
                     <h3 className="error-message">{errorMessage}</h3>
                 </form>

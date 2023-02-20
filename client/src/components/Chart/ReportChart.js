@@ -6,7 +6,7 @@ import {
     Tooltip,
     Legend,
 } from "chart.js";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { apiBaseUrl } from "../../api";
 import { Bar } from "react-chartjs-2";
 
@@ -64,14 +64,13 @@ const ReportChart = ({ token }) => {
                         ),
                         backgroundColor: (context) => {
                             const chart = context.chart;
-                            const { ctx, chartArea } = chart;
+                            const { chartArea } = chart;
                             if (!chartArea) {
                                 return null;
                             }
                             return gradientBlue(chart);
                         },
                         borderColor: "black",
-                        borderRadius: "10px",
                         borderWidth: 0,
                         borderRadius: 10,
                         borderSkipped: false,
@@ -83,7 +82,7 @@ const ReportChart = ({ token }) => {
                         ),
                         backgroundColor: (context) => {
                             const chart = context.chart;
-                            const { ctx, chartArea } = chart;
+                            const { chartArea } = chart;
                             if (!chartArea) {
                                 return null;
                             }
@@ -104,8 +103,8 @@ const ReportChart = ({ token }) => {
     function gradientBlue(chart) {
         const {
             ctx,
-            chartArea: { top, bottom, left, right },
-            scales: { x, y },
+            chartArea: { top, bottom },
+            // scales: { x, y },
         } = chart;
         const gradientSegment = ctx.createLinearGradient(0, bottom, 0, top);
         gradientSegment.addColorStop(0, "#44BBFE");
@@ -117,8 +116,7 @@ const ReportChart = ({ token }) => {
     function gradientYellow(chart) {
         const {
             ctx,
-            chartArea: { top, bottom, left, right },
-            scales: { x, y },
+            chartArea: { top, bottom },
         } = chart;
         const gradientSegment = ctx.createLinearGradient(0, bottom, 0, top);
         gradientSegment.addColorStop(0, "#FFCF53");

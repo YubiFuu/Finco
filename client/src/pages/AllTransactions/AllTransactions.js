@@ -6,14 +6,10 @@ import TransactionItem from "../../components/TransactionItem/TransactionItem";
 import "./AllTransactions.css";
 
 const AllTransactions = ({ token }) => {
-    const today = new Date().toISOString().substr(0, 10); //current date-time-stamp
     const [profile, setProfile] = useState([]);
-    const [errorMessage, setErrorMessage] = useState("");
     const [errorMessage2, setErrorMessage2] = useState([]);
 
     const [userTransactions, setUserTransactions] = useState([]);
-    const [monthlyTransactions, setMonthlyTransactions] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
     const [filtered, setFiltered] = useState([]);
     const [toggleFilterIncome, setToggleFilterIncome] = useState(false);
     const [toggleFilterExpense, setToggleFilterExpense] = useState(false);
@@ -35,10 +31,8 @@ const AllTransactions = ({ token }) => {
         })
             .then((res) => res.json())
             .then((response) => {
-                setMonthlyTransactions(response.result.monthlyTransactions);
                 setUserTransactions(response.result.transaction);
                 setFiltered(response.result.transaction);
-                setIsLoading(false);
                 console.log("Response:", response);
             });
     }, [token]);
@@ -239,6 +233,7 @@ const AllTransactions = ({ token }) => {
                     })}
                 </div>
             </main>
+            {errorMessage2 && <p className="error-message">{errorMessage2}</p>}
         </div>
     );
 };

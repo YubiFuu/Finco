@@ -8,12 +8,8 @@ import "./ReportPage.css";
 
 const ReportPage = ({ token }) => {
     const [profile, setProfile] = useState([]);
-    const [errorMessage, setErrorMessage] = useState("");
     const [errorMessage2, setErrorMessage2] = useState([]);
-
     const [userTransactions, setUserTransactions] = useState([]);
-    const [monthlyTransactions, setMonthlyTransactions] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
     const [filtered, setFiltered] = useState([]);
     const [toggleFilterIncome, setToggleFilterIncome] = useState(false);
     const [toggleFilterExpense, setToggleFilterExpense] = useState(false);
@@ -30,10 +26,8 @@ const ReportPage = ({ token }) => {
         })
             .then((res) => res.json())
             .then((response) => {
-                setMonthlyTransactions(response.result.monthlyTransactions);
                 setUserTransactions(response.result.transaction);
                 setFiltered(response.result.transaction);
-                setIsLoading(false);
             });
     }, [token]);
 
@@ -159,6 +153,7 @@ const ReportPage = ({ token }) => {
                     })}
                 </div>
             </main>
+            {errorMessage2 && <p className="error-message">{errorMessage2}</p>}
         </div>
     );
 };
