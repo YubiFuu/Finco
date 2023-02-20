@@ -49,8 +49,7 @@ const LogIn = ({ setToken }) => {
 				<div className="div-centered">
 					<h1>Welcome back!</h1>
 					<p>
-						Lorem ipsum dolor sit, amet consectetur adipisicing
-						elit. Cupiditate, ad!
+						Take charge of your money. Become financially organized.
 					</p>
 				</div>
 				<form className="input-wrapper">

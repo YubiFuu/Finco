@@ -63,10 +63,7 @@ const SignUp = () => {
 					{errorMessage ? (
 						<p className="error-message">{errorMessage}</p>
 					) : (
-						<p>
-							Lorem ipsum dolor sit amet consectetur adipisicing
-							elit. Ex debitis sit esse sint deleniti.
-						</p>
+						<p>Have control over your finances. Sign up now!</p>
 					)}
 				</div>
 				<h3 className="error-message">{errorMessage2}</h3>
