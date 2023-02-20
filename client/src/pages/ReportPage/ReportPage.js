@@ -109,10 +109,12 @@ const ReportPage = ({ token }) => {
                 <ReportChart token={token} />
 
                 <div className="total-inc-exp-wrapper display-flex__evenly">
-                    <div className="round grey">
+                    <div
+                        onClick={filterByIncome}
+                        className="income-img round grey box-shadow"
+                    >
                         <img
-                            onClick={filterByIncome}
-                            className="income-img icons-big"
+                            className="icons-big"
                             src="/images/Income.svg"
                             alt="INCOME-PIC"
                         />
@@ -123,10 +125,12 @@ const ReportPage = ({ token }) => {
                             )}`}</h3>
                         </div>
                     </div>
-                    <div className="round grey">
+                    <div
+                        onClick={filterByExpense}
+                        className="expense-img round grey box-shadow"
+                    >
                         <img
-                            onClick={filterByExpense}
-                            className="expense-img icons-big"
+                            className=" icons-big"
                             src="/images/Expense.svg"
                             alt="EXPENSE-PIC"
                         />

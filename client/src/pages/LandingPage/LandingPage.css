@@ -1,95 +1,96 @@
 .landing-page {
-	text-align: center;
-	margin-top: 16vh;
-	height: 50vh;
+    text-align: center;
+    height: 100vh;
+}
+.landing-wrapper {
+    position: relative;
+    margin-top: 75px;
+    width: 100%;
+    min-height: 500px;
 }
 .landing-page .button-wrapper {
-	width: 80%;
-	margin-top: 60vh;
-	margin-bottom: 40px;
-}
-.landing-page {
-	position: relative; /* Required for absolute positioning of child elements */
+    width: 80%;
+    margin-bottom: 40px;
 }
 
 .div-1,
 .div-2 {
-	position: absolute; /* Position child elements absolutely within parent */
-	top: 0;
-	left: 0;
-	opacity: 0; /* Set initial opacity to 0 to hide element */
-	animation-duration: 10s; /* Set animation duration */
-	animation-timing-function: ease-in; /* Set animation timing function */
-	animation-iteration-count: infinite; /* Set animation to repeat infinitely */
+    position: absolute; /* Position child elements absolutely within parent */
+    top: 0;
+    left: 0;
+    opacity: 0; /* Set initial opacity to 0 to hide element */
+    animation-duration: 10s; /* Set animation duration */
+    animation-timing-function: ease-in; /* Set animation timing function */
+    animation-iteration-count: infinite; /* Set animation to repeat infinitely */
 }
 
 .div-1 {
-	animation-name: fade-in-1; /* Set name of first animation */
-	animation-delay: 1s; /* Add a 2-second delay after the animation finishes */
+    animation-name: fade-in-1; /* Set name of first animation */
+    animation-delay: 1s; /* Add a 2-second delay after the animation finishes */
 }
 
 .div-2 {
-	animation-name: fade-in-2; /* Set name of second animation */
-	animation-delay: 2.5s; /* Add a 2-second delay after the animation finishes */
+    animation-name: fade-in-2; /* Set name of second animation */
+    animation-delay: 2.5s; /* Add a 2-second delay after the animation finishes */
 }
 
 @keyframes fade-in-1 {
-	0% {
-		opacity: 0;
-	}
-	10% {
-		opacity: 1;
-	}
-	25% {
-		opacity: 1;
-	}
-	40% {
-		opacity: 1;
-	}
-	50% {
-		opacity: 0;
-	}
-	75% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 0;
-	}
+    0% {
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    25% {
+        opacity: 1;
+    }
+    40% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    75% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 
 @keyframes fade-in-2 {
-	0% {
-		opacity: 0;
-	}
-	25% {
-		opacity: 0;
-	}
-	45% {
-		opacity: 1;
-	}
-	85% {
-		opacity: 1;
-	}
-	100% {
-		opacity: 0;
-	}
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 0;
+    }
+    45% {
+        opacity: 1;
+    }
+    85% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 
 .div-1 img,
 .div-2 img {
-	animation-duration: 2s;
-	animation-timing-function: ease-in-out;
-	animation-iteration-count: infinite;
-	animation-direction: alternate;
-	transform: translateY(-5px); /* Move the image up by 5 pixels */
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    transform: translateY(-5px); /* Move the image up by 5 pixels */
 }
 
 /* Animate the image moving up and down by 10 pixels */
 @keyframes float-up-down {
-	0% {
-		transform: translateY(-5px);
-	}
-	100% {
-		transform: translateY(5px);
-	}
+    0% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(5px);
+    }
 }
