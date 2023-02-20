@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Button from "../../components/Button/Button";
 import "./LandingPage.css";
 
@@ -6,7 +6,7 @@ const LandingPage = () => {
 	const navigate = useNavigate();
 
 	function navigateLogin() {
-		navigate("/home");
+		navigate("/register");
 	}
 	return (
 		<div className="landing-page display-flex__centered direction-column">
@@ -34,6 +34,11 @@ const LandingPage = () => {
 			<div className="button-wrapper">
 				<Button buttonName={"Get started ➤"} function={navigateLogin} />
 			</div>
+			<footer>
+				<p>
+					Already have an account? <Link to="/login">Log in</Link>
+				</p>
+			</footer>
 		</div>
 	);
 };

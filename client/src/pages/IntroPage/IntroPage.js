@@ -5,16 +5,13 @@ import "./IntroPage.css";
 const IntroPage = ({ token }) => {
 	const navigate = useNavigate();
 	console.log("intro-page-token:", token);
+	console.log("typeof:", typeof token);
 	useEffect(() => {
 		const timer = setTimeout(() => {
-			if (token === "null") {
-				navigate("/landing-page");
-			} else {
-				navigate("/home");
-			}
+			navigate("/home");
 		}, [6000]);
 		return () => clearTimeout(timer);
-	}, [navigate]);
+	}, []);
 	return (
 		<div className="intro-page display-flex__centered direction-column">
 			<img src="/images/Finco2.svg" />
