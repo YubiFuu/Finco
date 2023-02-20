@@ -4,11 +4,12 @@ import { apiBaseUrl } from "../../../api";
 import Button from "../../../components/Button/Button";
 import "./SignUp.css";
 
-const SignUp = ({ setIsFromSignUp }) => {
+const SignUp = () => {
 	const [firstName, setFirstName] = useState("");
 	const [lastName, setLastName] = useState("");
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
+	const [termsAndService, setTermsAndService] = useState(false);
 	// const [profilePicture, setProfilePicture] = useState(null);
 	// const [bio, setBio] = useState("");
 
@@ -25,7 +26,7 @@ const SignUp = ({ setIsFromSignUp }) => {
 		}
 		setErrorMessage2("");
 
-		fetch(`${apiBaseUrl}/users/register`, {
+		fetch(`${apiBaseUrl}/api/v1/users/register`, {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
@@ -47,7 +48,7 @@ const SignUp = ({ setIsFromSignUp }) => {
 					setErrorMessage(error.message);
 					return;
 				}
-				setIsFromSignUp(true);
+
 				return navigate("/edit-profile");
 			});
 	}

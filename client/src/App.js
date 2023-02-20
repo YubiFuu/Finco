@@ -65,10 +65,7 @@ function App() {
 						path="/login"
 						element={<LogIn setToken={setToken} token={token} />}
 					/>
-					<Route
-						path="/register"
-						element={<SignUp setIsFromSignUp={setIsFromSignUp} />}
-					/>
+					<Route path="/register" element={<SignUp />} />
 					<Route
 						path="/forgot-password"
 						element={<ForgotPassword />}
@@ -81,10 +78,7 @@ function App() {
 						path="/home"
 						element={
 							<Protected token={token} setToken={setToken}>
-								<Home
-									token={token}
-									setIsFromSignUp={setIsFromSignUp}
-								/>
+								<Home token={token} />
 								<NavBar />
 							</Protected>
 						}
@@ -92,11 +86,7 @@ function App() {
 					<Route
 						path="/edit-profile"
 						element={
-							<Protected
-								token={token}
-								setToken={setToken}
-								isFromSignUp={isFromSignUp}
-							>
+							<Protected token={token} setToken={setToken}>
 								<EditProfile token={token} />
 							</Protected>
 						}

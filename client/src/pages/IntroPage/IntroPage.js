@@ -7,7 +7,7 @@ const IntroPage = ({ token }) => {
 	console.log("intro-page-token:", token);
 	useEffect(() => {
 		const timer = setTimeout(() => {
-			if (token === null) {
+			if (token === "null") {
 				navigate("/landing-page");
 			} else {
 				navigate("/home");

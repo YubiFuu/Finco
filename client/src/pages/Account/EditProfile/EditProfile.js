@@ -4,7 +4,8 @@ import { apiBaseUrl } from "../../../api";
 import Button from "../../../components/Button/Button";
 import "./EditProfile.css";
 import { makeFormData } from "./formData";
-const EditProfile = ({ token, isFromSignUp }) => {
+const EditProfile = ({ token }) => {
+	const avatarPlaceholder = "/images/avatar-placeholder.svg";
 	const [cardNumber, setCardNumber] = useState("");
 	const [monthlyLimit, setMonthlyLimit] = useState("");
 	const [profilePicturePreview, setProfilePicturePreview] = useState("");
@@ -25,7 +26,7 @@ const EditProfile = ({ token, isFromSignUp }) => {
 				if (status === "ok") {
 					if (result.profilePicture) {
 						setProfilePicturePreview(
-							`${apiBaseUrl}/img/${result.profilePicture}`
+							`${apiBaseUrl}/api/v1/img/${result.profilePicture}`
 						);
 					}
 				} else {
@@ -55,7 +56,7 @@ const EditProfile = ({ token, isFromSignUp }) => {
 			profilePicture,
 		});
 
-		fetch(`${apiBaseUrl}/users/profile`, {
+		fetch(`${apiBaseUrl}/api/v1/users/profile`, {
 			method: "PUT",
 			headers: { Authorization: `Bearer ${token}` },
 			body: formData,
@@ -64,7 +65,7 @@ const EditProfile = ({ token, isFromSignUp }) => {
 			.then(({ status, result, error }) => {
 				if (status === "ok") {
 					console.log(result);
-					return navigate("/");
+					return navigate("/home");
 				} else {
 					console.log(error);
 					setErrorMessage("Error editing profile, try again later");
@@ -77,7 +78,7 @@ const EditProfile = ({ token, isFromSignUp }) => {
 	};
 
 	function backToDashboard() {
-		navigate("/");
+		navigate("/home");
 	}
 
 	return (
@@ -91,12 +92,12 @@ const EditProfile = ({ token, isFromSignUp }) => {
 				<div></div>
 			</header>
 			<main>
-				<h1>{isFromSignUp ? "Set up" : "Edit"} your account</h1>
+				<h1>Edit your account</h1>
 				<p>Profile picture</p>
 				<img
 					id="edit-image"
-					src={profilePicturePreview}
-					alt="profile-picture"
+					src={`${profilePicturePreview || avatarPlaceholder}`}
+					alt="profile picture"
 				/>
 				<input
 					type="file"
