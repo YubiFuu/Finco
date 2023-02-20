@@ -16,7 +16,7 @@ const IntroPage = ({ token }) => {
 		<div className="intro-page display-flex__centered direction-column">
 			<img src="/images/Finco2.svg" />
 			<h1>Finco Bank</h1>
-			<h2>Ultra Premium Deluxe services!</h2>
+			<h2>Ultra Premium Deluxe money services!</h2>
 		</div>
 	);
 };

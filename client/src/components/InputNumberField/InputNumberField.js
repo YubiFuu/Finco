@@ -46,7 +46,11 @@ function NumberInput(props) {
 		<div className="input-number-field display-flex__centered direction-column">
 			<label htmlFor="input-amount">Amount</label>
 			<input
-				className={isAmountValid ? "input-form" : "required input-form"}
+				className={
+					isAmountValid
+						? "input-form bigger-font"
+						: "required input-form bigger-font"
+				}
 				type="text"
 				value={value}
 				onChange={handleChange}

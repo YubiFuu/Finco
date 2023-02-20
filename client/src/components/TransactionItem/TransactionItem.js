@@ -2,7 +2,7 @@ import "./TransactionItem.css";
 
 const TransactionItem = (props) => {
 	const expensesIconsPath = "./images/catagoryIcons/Expenses";
-	const incomeIconsPath = "./images/catagoryIcons/income";
+	const incomeIconsPath = "./images/catagoryIcons/Income";
 	function pickIcon() {
 		if (props.category === "Food&Drink") {
 			return (
