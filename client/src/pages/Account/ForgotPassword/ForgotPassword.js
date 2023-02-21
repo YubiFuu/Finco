@@ -4,7 +4,7 @@ import { apiBaseUrl } from "../../../api";
 import Button from "../../../components/Button/Button";
 import "./ForgotPassword.css";
 
-const ForgotPassword = ({ token }) => {
+const ForgotPassword = () => {
     const [email, setEmail] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
     const [successMessage, setSuccessMessage] = useState("");
