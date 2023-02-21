@@ -106,6 +106,7 @@ const AddTransaction = ({ token }) => {
                             <option value="income">Add income</option>
                             <option value="expense">Add expense</option>
                         </select>
+                        <h3 className="error-message"> {errorMessage}</h3>
                     </div>
                     <Card token={token} />
                     <div className="display-flex__centered direction-column">
@@ -203,7 +204,6 @@ const AddTransaction = ({ token }) => {
                         function={addTransaction}
                         buttonName={"Add Transaction"}
                     />
-                    <h3 className="error-message">{errorMessage}</h3>
                 </form>
             </main>
         </div>

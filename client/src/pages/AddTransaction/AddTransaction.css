@@ -44,3 +44,11 @@ label {
     font-weight: 700;
     margin-bottom: 5px;
 }
+
+.add-transaction {
+    margin-bottom: 30px;
+}
+.add-transaction h3 {
+    position: absolute;
+    left: 25%;
+}
