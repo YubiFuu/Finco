@@ -120,8 +120,8 @@ const ReportPage = ({ token }) => {
                         />
                         <div>
                             <p>Income</p>
-                            <h3>{`+ $${setDotAfter3Digits(
-                                profile?.totalAmount?.totalIncome
+                            <h3>{`$${setDotAfter3Digits(
+                                profile?.totalAmount?.totalIncome.toFixed(2)
                             )}`}</h3>
                         </div>
                     </div>
@@ -136,8 +136,8 @@ const ReportPage = ({ token }) => {
                         />
                         <div>
                             <p>Expense</p>
-                            <h3>{`- $${setDotAfter3Digits(
-                                profile?.totalAmount?.totalExpense
+                            <h3>{`$${setDotAfter3Digits(
+                                profile?.totalAmount?.totalExpense.toFixed(2)
                             )}`}</h3>
                         </div>
                     </div>
