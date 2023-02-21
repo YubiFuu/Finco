@@ -4,7 +4,7 @@ import { apiBaseUrl } from "../../../api";
 import Button from "../../../components/Button/Button";
 import "./ForgotPassword.css";
 
-const ForgotPassword = ({ token }) => {
+const ForgotPassword = () => {
     const [email, setEmail] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
     const [successMessage, setSuccessMessage] = useState("");
@@ -12,7 +12,6 @@ const ForgotPassword = ({ token }) => {
     function forgotPassword(event) {
         event.preventDefault();
 
-        // prüfe ob required Eingaben getätigt wurden
         if (!email || email === "") {
             return <p>Check Email!</p>;
         }
@@ -29,13 +28,11 @@ const ForgotPassword = ({ token }) => {
             .then((res) => res.json())
             .then(({ status, error }) => {
                 if (status === "error") {
-                    // error handling...
                     setErrorMessage(error.message);
                     return;
                 }
                 setSuccessMessage("Success! Check your e-mails.");
             });
-        // return navigate("/login");
     }
 
     return (

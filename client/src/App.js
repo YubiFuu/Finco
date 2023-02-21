@@ -68,7 +68,7 @@ function App() {
                     <Route path="/register" element={<SignUp />} />
                     <Route
                         path="/forgot-password"
-                        element={<ForgotPassword token={token} />}
+                        element={<ForgotPassword />}
                     />
                     <Route
                         path="/reset-password/:resetPwdToken"

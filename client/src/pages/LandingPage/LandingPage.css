@@ -27,11 +27,13 @@
 .div-1 {
     animation-name: fade-in-1; /* Set name of first animation */
     animation-delay: 1s; /* Add a 2-second delay after the animation finishes */
+    width: 100%;
 }
 
 .div-2 {
     animation-name: fade-in-2; /* Set name of second animation */
     animation-delay: 2.5s; /* Add a 2-second delay after the animation finishes */
+    width: 100%;
 }
 
 @keyframes fade-in-1 {
@@ -78,6 +80,7 @@
 
 .div-1 img,
 .div-2 img {
+    object-position: center;
     animation-duration: 2s;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;

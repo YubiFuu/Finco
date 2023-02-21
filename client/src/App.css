@@ -1,191 +1,191 @@
 @font-face {
-	font-family: "Urbanist";
-	src: url("../public/fonts/Urbanist.ttf");
+    font-family: "Urbanist";
+    src: url("../public/fonts/Urbanist.ttf");
 }
 * {
-	margin: 0px;
-	padding: 0px;
-	box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
 }
 
 html {
-	font-family: "Urbanist";
-	font-size: 67.5%;
+    font-family: "Urbanist";
+    font-size: 67.5%;
 }
 body {
-	min-height: 100vh;
-	font-family: "Urbanist";
-	scroll-behavior: smooth;
+    min-height: 100vh;
+    font-family: "Urbanist";
+    scroll-behavior: smooth;
 }
 
 label {
-	font-size: 1.5rem;
+    font-size: 1.5rem;
 }
 
 .body-column {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
 }
 a {
-	text-decoration: none;
+    text-decoration: none;
 }
 svg {
-	stroke: #565c72;
-	width: 47px;
-	height: auto;
+    stroke: #565c72;
+    width: 47px;
+    height: auto;
 }
 p {
-	font-size: 1.4rem;
-	color: #565c72;
+    font-size: 1.4rem;
+    color: #565c72;
 }
 p.small {
-	font-size: 1.2rem;
+    font-size: 1.2rem;
 }
 h1 {
-	font-size: 2.8rem;
-	color: #0d1636;
-	margin-bottom: 20px;
+    font-size: 2.8rem;
+    color: #0d1636;
+    margin-bottom: 20px;
 }
 h2 {
-	font-size: 1.8rem;
-	font-weight: 700;
+    font-size: 1.8rem;
+    font-weight: 700;
 }
 
 h3.big {
-	font-size: 2rem;
+    font-size: 2rem;
 }
 h3 {
-	font-size: 1.4rem;
+    font-size: 1.4rem;
 }
 
 select,
 input:not([type="checkbox"]) {
-	padding: 20px;
-	border-radius: 50px;
-	border: 1px solid #ebebeb;
-	font-family: "Urbanist";
-	color: #0d1636;
-	margin-bottom: 10px;
-	width: 100%;
+    padding: 25px;
+    border-radius: 50px;
+    border: 1px solid #ebebeb;
+    font-family: "Urbanist";
+    color: #0d1636;
+    margin-bottom: 10px;
+    width: 100%;
 }
 
 header {
-	height: 80px;
-	margin: 20px 26px 0 26px;
+    height: 80px;
+    margin: 20px 26px 0 26px;
 }
 
 main {
-	margin: 0 20px 50px 20px;
-	padding-bottom: 20px;
+    margin: 0 20px 50px 20px;
+    padding-bottom: 20px;
 }
 footer {
-	margin-top: auto;
-	margin-bottom: 15%;
-	text-align: center;
+    margin-top: auto;
+    margin-bottom: 15%;
+    text-align: center;
 }
 footer a {
-	text-decoration: none;
-	background: linear-gradient(to bottom, #44bbfe, #1e78fe);
-	background-clip: text;
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
+    text-decoration: none;
+    background: linear-gradient(to bottom, #44bbfe, #1e78fe);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .error-message {
-	color: red;
-	text-align: center;
+    color: red;
+    text-align: center;
 }
 
 .blue-button {
-	width: 100%;
-	justify-content: center;
-	border-radius: 50px;
-	display: flex;
-	padding: 20px;
-	border: none;
-	font-family: "Urbanist";
-	font-size: 1.8rem;
-	background: linear-gradient(to bottom, #44bbfe, #1e78fe);
-	color: white;
-	margin-bottom: 10px;
-	box-shadow: 0px 15px 35px #c9e5f5;
+    width: 100%;
+    justify-content: center;
+    border-radius: 50px;
+    display: flex;
+    padding: 20px;
+    border: none;
+    font-family: "Urbanist";
+    font-size: 1.8rem;
+    background: linear-gradient(to bottom, #44bbfe, #1e78fe);
+    color: white;
+    margin-bottom: 10px;
+    box-shadow: 0px 15px 35px #c9e5f5;
 }
 
 .blue-button:hover {
-	cursor: pointer;
+    cursor: pointer;
 }
 .App {
-	max-width: 375px;
-	margin: 0 auto;
+    max-width: 375px;
+    margin: 0 auto;
 }
 
 .display-flex__centered {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .display-flex__evenly {
-	display: flex;
-	justify-content: space-evenly;
-	align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
 .display-flex__between {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .direction-column {
-	flex-direction: column;
+    flex-direction: column;
 }
 
 .flex-grow {
-	flex-grow: 1;
+    flex-grow: 1;
 }
 
 .logo {
-	height: 40px;
+    height: 40px;
 }
 .icons-big {
-	height: 50px;
+    height: 50px;
 }
 
 .back-button {
-	height: 20px;
+    height: 20px;
 }
 
 .icon-color-income {
-	filter: invert(49%) sepia(98%) saturate(1758%) hue-rotate(192deg)
-		brightness(97%) contrast(109%);
+    filter: invert(49%) sepia(98%) saturate(1758%) hue-rotate(192deg)
+        brightness(97%) contrast(109%);
 }
 .icon-color-expense {
-	filter: invert(83%) sepia(34%) saturate(5808%) hue-rotate(344deg)
-		brightness(107%) contrast(103%);
+    filter: invert(83%) sepia(34%) saturate(5808%) hue-rotate(344deg)
+        brightness(107%) contrast(103%);
 }
 
 .icon-color-account {
-	filter: invert(10%) sepia(12%) saturate(3973%) hue-rotate(192deg)
-		brightness(94%) contrast(103%);
+    filter: invert(10%) sepia(12%) saturate(3973%) hue-rotate(192deg)
+        brightness(94%) contrast(103%);
 }
 
 .avatar-pic {
-	height: 55px;
-	width: 55px;
-	border-radius: 70px;
-	object-fit: cover;
+    height: 55px;
+    width: 55px;
+    border-radius: 70px;
+    object-fit: cover;
 }
 .round {
-	border-radius: 50px;
-	flex-grow: 1;
-	display: flex;
-	align-items: center;
-	padding: 15px;
-	gap: 5px;
+    border-radius: 50px;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    gap: 5px;
 }
 .grey {
-	background-color: #f7f7f7;
+    background-color: #f7f7f7;
 }
 
 /* .box-shadow {
@@ -193,17 +193,17 @@ footer a {
 } */
 
 .div-centered {
-	text-align: center;
-	display: flex;
-	flex-direction: column;
-	gap: 12px;
-	margin-bottom: 82px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 82px;
 }
 
 .required {
-	outline: 2px solid red;
+    outline: 2px solid red;
 }
 
 .chart {
-	height: 250px;
+    height: 250px;
 }
