@@ -107,7 +107,7 @@ const AllTransactions = ({ token }) => {
 	//=========================================================
 
 	// ================= Filter by Income ======================
-	function filterByIncome() {
+	/* function filterByIncome() {
 		setToggleFilterExpense(false);
 		setToggleFilterIncome((prev) => !prev);
 		console.log("ToggleIncome:", toggleFilterIncome);
@@ -122,9 +122,9 @@ const AllTransactions = ({ token }) => {
 		} else {
 			setFiltered(userTransactions);
 		}
-	}
+	}*/
 
-	/*	function filterByIncome() {
+	function filterByIncome() {
 		setToggleFilterExpense(false);
 		setToggleFilterIncome((prevState) => !prevState);
 	}
@@ -143,11 +143,11 @@ const AllTransactions = ({ token }) => {
 			? setFiltered(filteredExpenses)
 			: setFiltered(userTransactions);
 	}, [toggleFilterIncome]);
-    */
+
 	//=========================================================
 
 	// ================= Filter by Expenses ======================
-	function filterByExpense() {
+	/* function filterByExpense() {
 		setToggleFilterIncome(false);
 		setToggleFilterExpense((prev) => !prev);
 		console.log("ToggleExpense:", toggleFilterExpense);
@@ -163,8 +163,9 @@ const AllTransactions = ({ token }) => {
 			setFiltered(userTransactions);
 		}
 	}
+    */
 
-	/*	function filterByExpense() {
+	function filterByExpense() {
 		setToggleFilterIncome(false);
 		setToggleFilterExpense(!toggleFilterExpense);
 	}
@@ -183,7 +184,7 @@ const AllTransactions = ({ token }) => {
 			? setFiltered(filteredExpenses2)
 			: setFiltered(userTransactions);
 	}, [toggleFilterExpense]);
-    */
+
 	//=========================================================
 	return (
 		<div
