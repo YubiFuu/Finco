@@ -1,4 +1,4 @@
-# Finco App
+# Finco Finances App
 
 by Jess, Sersch & George
 
@@ -23,19 +23,20 @@ cd client && npm install
 ```
 cd server && npm install
 ```
+Create .env as described in .env.sample
 
 ### Running the app
 
 Open a terminal on server directory
 
 ```
-npm run start-dev
+npm start
 ```
 
 and open another terminal on client directory
 
 ```
-npm run start
+npm start
 ```
 
 Access the web app at http://localhost:3000/
