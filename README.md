@@ -23,7 +23,7 @@ cd client && npm install
 ```
 cd server && npm install
 ```
-Create .env as described in .env.sample
+Create .env as described in .env.example
 
 ### Running the app
 
