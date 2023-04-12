@@ -1,4 +1,4 @@
-# GrosShop
+# Finco App
 
 by Jess, Sersch & George
 
